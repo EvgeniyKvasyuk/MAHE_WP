@@ -1,0 +1,46 @@
+$duration-fast: 0.2s;
+$duration-slow: 0.4s;
+$cubic-bezier-fade-in: cubic-bezier(0.1, 0.4, 0.6, 0.7);
+$cubic-bezier-fade-out: cubic-bezier(0.4, 0.1, 0.7, 0.6);
+$cubic-bezier-slide-in: cubic-bezier(0.4, 0.1, 0.5, 1);
+$cubic-bezier-slide-out: cubic-bezier(0.4, 0.2, 0.2, 1);
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-out {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}
