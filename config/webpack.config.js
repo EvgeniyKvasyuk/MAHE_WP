@@ -308,11 +308,10 @@ module.exports = function (webpackEnv) {
         .map(ext => `.${ext}`)
         .filter(ext => useTypeScript || !ext.includes('ts')),
       alias: {
-        // Support React Native Web
-        // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
-        'react-native': 'react-native-web',
-        '@utils': path.resolve('src', 'utils'),
-        '@constants': path.resolve('src', 'constants'),
+        '@assets': path.resolve('src', 'assets'),
+        '@modules': path.resolve('src', 'modules'),
+        '@common': path.resolve('src', 'common'),
+        '@components': path.resolve('src', 'components'),
         // Allows for better profiling with ReactDevTools
         ...(isEnvProductionProfile && {
           'react-dom$': 'react-dom/profiling',
@@ -705,7 +704,7 @@ module.exports = function (webpackEnv) {
           issue: {
             // This one is specifically to match during CI tests,
             // as micromatch doesn't match
-            // '../cra-template-typescript/template/src/app.tsx'
+            // '../cra-template-typescript/template/src/App.tsx'
             // otherwise.
             include: [
               { file: '../**/src/**/*.{ts,tsx}' },
@@ -725,9 +724,8 @@ module.exports = function (webpackEnv) {
       !disableESLintPlugin &&
         new ESLintPlugin({
           // Plugin options
-          extensions: ['js', 'mjs', 'jsx', 'ts', 'tsx'],
-          formatter: require.resolve('react-dev-utils/eslintFormatter'),
           eslintPath: require.resolve('eslint'),
+          extensions: ['ts', 'tsx', 'js', 'jsx'],
           failOnError: !(isEnvDevelopment && emitErrorsAsWarnings),
           context: paths.appSrc,
           cache: true,
@@ -738,14 +736,6 @@ module.exports = function (webpackEnv) {
           // ESLint class options
           cwd: paths.appPath,
           resolvePluginsRelativeTo: __dirname,
-          baseConfig: {
-            extends: [require.resolve('eslint-config-react-app/base')],
-            rules: {
-              ...(!hasJsxRuntime && {
-                'react/react-in-jsx-scope': 'error',
-              }),
-            },
-          },
         }),
     ].filter(Boolean),
     // Turn off performance processing because we utilize

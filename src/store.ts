@@ -1,11 +1,12 @@
-import { configureStore } from '@reduxjs/toolkit'
-import { articleReducer } from "./pages/article-page";
+import { configureStore } from '@reduxjs/toolkit';
+
+import { articleReducer } from './pages/ArticlePage';
 
 export const store = configureStore({
-    reducer: {
-        article: articleReducer
-    },
-})
+  reducer: {
+    article: articleReducer,
+  },
+});
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>
