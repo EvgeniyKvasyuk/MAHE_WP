@@ -1,4 +1,3 @@
 export {
   Button,
 } from './Button';
-
