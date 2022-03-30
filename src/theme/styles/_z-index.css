@@ -1,0 +1,9 @@
+$z-index-minimal: 50;
+$z-index-main-menu: 60;
+$z-index-header: 70;
+$z-index-popup-menu: 100;
+$z-index-modal-overlay: 1000;
+$z-index-modal-container: 1100;
+$z-index-notifications-root: 1200;
+$z-index-sortable-clone: 1300;
+$z-index-portal: 10000;

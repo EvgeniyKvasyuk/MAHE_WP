@@ -1,9 +1,7 @@
 /* example */
-@import 'src/theme/styles/colors';
-//@import 'src/theme/styles/fonts'; //need to setup
-$button: button;
+@import '_colors.css';
 
-.#{$button} {
+.button {
     align-items: center;
     background: none;
     border: 1px solid $color-blue-haze;
@@ -15,8 +13,6 @@ $button: button;
     padding: 0 20px;
     transition: 50ms ease-in-out;
     user-select: none;
-
-   // @include base-medium-font($color-cerulean-blue, 500, 0.3px, normal); //need to setup, just example
 
     &.button-icon-position {
         &--left {
@@ -63,7 +59,7 @@ $button: button;
         color: $color-crimson;
 
         &:hover:not(.button--without-hover),
-        &.#{$button}--focused {
+        &.button--focused {
             background: $color-crimson;
             border-color: $color-crimson;
             color: $color-white;

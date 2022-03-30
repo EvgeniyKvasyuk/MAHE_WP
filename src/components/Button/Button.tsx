@@ -4,7 +4,7 @@ import * as React from 'react';
 
 import classNames from 'classnames/bind';
 
-import styles from './Button.module.scss';
+import styles from './Button.module.css';
 import { ButtonProps } from './button-types';
 import { getStyle } from './button-utils';
 
