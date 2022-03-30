@@ -1,0 +1,29 @@
+@import '_sizes.css';
+@import '_fonts.css';
+@import '_z-index.css';
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  font-size: $medium-font-size;
+  z-index: $z-index-header;
+
+  &__logo {
+    width: 13.75rem;
+    height: 4.375rem;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+
+  &__content-item {
+    margin-right: 3.125rem;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
