@@ -1,4 +1,4 @@
-@import './colors';
+@import '_colors.css';
 
 $main-font-family: 'Roboto', sans-serif;
 $monospace-font-family: 'RobotoMono', monospace;
@@ -13,7 +13,7 @@ $biggest-font-size: 1.5rem;
 
 $modal-header-font-size: 22px;
 
-@mixin base-header-font($color, $line-height: 1.17, $font-size: $biggest-font-size, $letter-spacing: normal) {
+@define-mixin base-header-font($color, $line-height: 1.17, $font-size: $biggest-font-size, $letter-spacing: normal) {
     color: $color;
     font-family: $main-font-family;
     font-size: $font-size;
@@ -23,7 +23,7 @@ $modal-header-font-size: 22px;
     line-height: $line-height;
 }
 
-@mixin menu-header-font() {
+@define-mixin menu-header-font() {
     @include base-header-font($color-bluewood);
     @content;
 }

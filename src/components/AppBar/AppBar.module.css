@@ -1,0 +1,8 @@
+@import '_colors';
+
+.app-bar {
+  background-color: $color-white;
+  color: $color-text-primary;
+  padding: 1.5rem 5rem;
+  box-shadow: 0 2px 4px $app-bar-shadow-color;
+}
