@@ -146,7 +146,7 @@ The commit message should be concise and reflect the essence of the changes made
 
 **type:**
 
-* feature - development of new functionality (new page, new button, new input field, etc.).
+* feat - development of new functionality (new page, new button, new input field, etc.).
 * fix - fixing defects.
 * docs - change in the documentation.
 * refactor - implementation changes while maintaining the current functionality.
