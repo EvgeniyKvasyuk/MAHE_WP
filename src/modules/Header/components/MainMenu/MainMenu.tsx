@@ -2,6 +2,7 @@ import React from 'react';
 
 import classNames from 'classnames/bind';
 
+import { ROUTES } from '@common/routes';
 import { AppBar } from '@components/AppBar';
 import { Link, LinkProps } from '@components/Link';
 
@@ -12,11 +13,7 @@ const cn = classNames.bind(styles);
 
 function MainMenuLink({ to, children }: LinkProps) {
   return (
-    <Link
-      to={to}
-      underline="hover"
-      className={cn('main-menu__item')}
-    >
+    <Link to={to} underline="hover" className={cn('main-menu__item')}>
       {children}
     </Link>
   );
@@ -25,9 +22,9 @@ function MainMenuLink({ to, children }: LinkProps) {
 export function MainMenu() {
   return (
     <AppBar className={cn('main-menu')}>
-      <MainMenuLink to="/">{locale.links.home}</MainMenuLink>
-      <MainMenuLink to="/appointments">{locale.links.appointments}</MainMenuLink>
-      <MainMenuLink to="/prescriptions">{locale.links.prescriptions}</MainMenuLink>
+      <MainMenuLink to={ROUTES.MAIN_PAGE}>{locale.links.home}</MainMenuLink>
+      <MainMenuLink to={ROUTES.APPOINTMENTS}>{locale.links.appointments}</MainMenuLink>
+      <MainMenuLink to={ROUTES.PRESCRIPTIONS}>{locale.links.prescriptions}</MainMenuLink>
     </AppBar>
   );
 }

@@ -1,16 +1,26 @@
 import React from 'react';
 
 import { StyledEngineProvider } from '@mui/material/styles';
-import { Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
+import { ROUTES } from './common/routes';
+import { BaseLayout } from './modules/BaseLayout';
+import { Appointments } from './pages/Appointments';
+import { ArticlePage } from './pages/ArticlePage';
 import { MainPage } from './pages/MainPage';
 
 function App() {
   return (
     <StyledEngineProvider injectFirst>
-      <Routes>
-        <Route element={<MainPage />} path="*" />
-      </Routes>
+      <Router>
+        <Routes>
+          <Route element={<BaseLayout />}>
+            <Route element={<MainPage />} path={ROUTES.MAIN_PAGE} />
+            <Route path={ROUTES.APPOINTMENTS} element={<Appointments />} />
+            <Route path={ROUTES.ARTICLE} element={<ArticlePage />} />
+          </Route>
+        </Routes>
+      </Router>
     </StyledEngineProvider>
   );
 }

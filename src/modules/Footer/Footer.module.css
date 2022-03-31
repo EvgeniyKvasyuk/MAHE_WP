@@ -1,0 +1,7 @@
+@import '_colors.css';
+
+.footer {
+  display: flex;
+  padding: 1rem 5rem;
+  background-color: $color-background-primary;
+}
