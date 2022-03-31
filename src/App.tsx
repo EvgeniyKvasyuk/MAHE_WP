@@ -1,16 +1,16 @@
 import React from 'react';
 
 import { StyledEngineProvider } from '@mui/material/styles';
+import { Route, Routes } from 'react-router-dom';
 
-import './App.css';
 import { MainPage } from './pages/MainPage';
 
 function App() {
   return (
     <StyledEngineProvider injectFirst>
-      <div className="App">
-        <MainPage />
-      </div>
+      <Routes>
+        <Route element={<MainPage />} path="*" />
+      </Routes>
     </StyledEngineProvider>
   );
 }
