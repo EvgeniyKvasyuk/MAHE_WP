@@ -2,14 +2,14 @@
 @import '_fonts.css';
 
 .main-menu {
+  z-index: $z-index-main-menu;
   display: flex;
   flex-direction: row;
   font-size: $medium-font-size;
-  z-index: $z-index-main-menu;
 
   &__item {
-    font-weight: 500;
     margin-right: 2.5rem;
+    font-weight: 500;
 
     &:last-of-type {
       margin-right: 0;
