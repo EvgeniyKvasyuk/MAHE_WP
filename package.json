@@ -67,6 +67,8 @@
     "lint:base:fix": "eslint ./src --ext js,jsx,ts,tsx --fix",
     "prettier:fix": "prettier \"src/**/*.{js,jsx,ts,tsx,json,md}\" -l --write",
     "prettier:check": "prettier \"src/**/*.{js,jsx,ts,tsx,json,md}\" -l --check",
+    "stylelint": "stylelint \"src/**/*.css\"",
+    "stylelintFix": "stylelint \"src/**/*.css\" --fix",
     "husky-install": "husky install",
     "lint-staged": "lint-staged",
     "typecheck": "set NODE_OPTIONS=--max_old_space_size=6144 && tsc --noEmit"
@@ -173,11 +175,15 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-testing-library": "^3.9.2",
     "eslint-webpack-plugin": "^3.1.1",
+    "stylelint-config-rational-order": "0.1.2",
+    "stylelint-config-standard": "22.0.0",
+    "stylelint-webpack-plugin": "3.2.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.7"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": "eslint --fix",
+    "src/**/*.css": "stylelint --fix",
     "src/**/*.{js,jsx,ts,tsx,json,md}": [
       "prettier --single-quote --write",
       "git add"

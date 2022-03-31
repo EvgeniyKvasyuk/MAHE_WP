@@ -25,6 +25,7 @@ const ForkTsCheckerWebpackPlugin =
     ? require('react-dev-utils/ForkTsCheckerWarningWebpackPlugin')
     : require('react-dev-utils/ForkTsCheckerWebpackPlugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const createEnvironmentHash = require('./webpack/persistentCache/createEnvironmentHash');
 
@@ -658,6 +659,12 @@ module.exports = function (webpackEnv) {
           cwd: paths.appPath,
           resolvePluginsRelativeTo: __dirname,
         }),
+      new StyleLintPlugin({
+        configFile: 'stylelint.config.js',
+        files: ['**/*.css'],
+        failOnError: false,
+        quiet: false,
+      }),
     ].filter(Boolean),
     // Turn off performance processing because we utilize
     // our own hints via the FileSizeReporter
