@@ -1,3 +1,12 @@
 $general-padding: 20px;
 $main-menu-width: 60px;
 $main-menu-item-height: 60px;
+
+/* sizes */
+$screenMobileMin: 320px;
+$screenMobileMax: 767px;
+$screenTabletMin: 768px;
+$screenTabletMax: 1024px;
+$screenLaptopMin: 1025px;
+$screenLaptopMax: 1279px;
+$screenDesktopMin: 1280px;

@@ -1,0 +1,12 @@
+@import '_colors.css';
+
+.base-layout {
+  &__main-content {
+    margin-top: 1.875rem;
+    margin-bottom: 1.875rem;
+  }
+
+  &__paper {
+    padding: 1.5rem;
+  }
+}

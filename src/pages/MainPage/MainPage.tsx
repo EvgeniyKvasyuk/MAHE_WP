@@ -1,20 +1,15 @@
 import React from 'react';
 
-import { Route, Routes, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-import { Header } from '@modules/Header';
+import { ROUTES } from '@common/routes';
 
-import { ArticlePage } from '../ArticlePage';
+import { locale } from './locale';
 
 export function MainPage() {
   return (
     <div>
-      <Header />
-      <Routes>
-        <Route path="/article" element={<ArticlePage />} />
-        {/* <Route path="/anotherPage" element={<AnotherPage/>}/> */}
-      </Routes>
-      <Link to="article">Link to article</Link>
+      <Link to={ROUTES.ARTICLE}>{locale.article_link}</Link>
     </div>
   );
 }
