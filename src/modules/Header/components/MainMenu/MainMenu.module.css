@@ -1,11 +1,16 @@
 @import '_z-index.css';
 @import '_fonts.css';
+@import '_sizes.css';
 
 .main-menu {
   z-index: $z-index-main-menu;
   display: flex;
   flex-direction: row;
   font-size: $medium-font-size;
+
+  @media (max-width: $screenTabletMax) {
+    display: none;
+  }
 
   &__item {
     margin-right: 2.5rem;
@@ -14,5 +19,16 @@
     &:last-of-type {
       margin-right: 0;
     }
+
+    @media (max-width: $screenTabletMax) {
+      margin: 0;
+      padding: 1rem 1.5rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
   }
 }

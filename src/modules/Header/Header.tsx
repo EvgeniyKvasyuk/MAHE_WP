@@ -1,17 +1,18 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
-import classNames from 'classnames/bind';
+import { useSelector, useDispatch } from 'react-redux';
 
-import styles from './Header.module.css';
-import { MainHeader, MainMenu } from './components';
-
-const cn = classNames.bind(styles);
+import { Header as HeaderComponent } from './components';
+import { mainMenuToggle, mainMenuOpenSelector } from './store';
 
 export function Header() {
-  return (
-    <div className={cn('app-header')}>
-      <MainHeader />
-      <MainMenu />
-    </div>
-  );
+  const dispatch = useDispatch();
+
+  const mainMenuToggleHandler = useCallback(() => {
+    dispatch(mainMenuToggle());
+  }, [dispatch]);
+
+  const mainMenuOpen = useSelector(mainMenuOpenSelector);
+
+  return <HeaderComponent mainMenuToggleHandler={mainMenuToggleHandler} mainMenuOpen={mainMenuOpen} />;
 }

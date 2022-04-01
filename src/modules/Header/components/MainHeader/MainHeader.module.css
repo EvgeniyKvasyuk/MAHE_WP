@@ -9,14 +9,32 @@
   justify-content: space-between;
   font-size: $medium-font-size;
 
+  &__left-content {
+    display: flex;
+    align-items: center;
+  }
+
+  &__menu-button {
+    display: none;
+    margin-right: 1.25rem;
+
+    @media (max-width: $screenTabletMax) {
+      display: block;
+    }
+  }
+
   &__logo {
     width: 13.75rem;
     height: 4.375rem;
   }
 
-  &__content {
+  &__right-content {
     display: flex;
     align-items: center;
+
+    @media (max-width: $screenTabletMax) {
+      display: none;
+    }
   }
 
   &__content-item {
