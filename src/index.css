@@ -1,10 +1,17 @@
 @import '_colors.css';
 @import '_sizes.css';
 
+html {
+  font-size: 16px;
+
+  @media (max-width: $screenLaptopMax), (max-height: 780px) and (min-width: $screenDesktopMin) {
+    font-size: 14px;
+  }
+}
+
 body {
   margin: 0;
   color: $color-text-primary;
-  font-size: 16px;
   font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -20,10 +27,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: $color-background-secondary;
-
-  @media (max-width: $screenLaptopMax), (max-height: 780px) and (min-width: $screenDesktopMin) {
-    font-size: 14px; /* stylelint-disable-line */
-  }
 }
 
 code {

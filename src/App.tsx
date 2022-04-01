@@ -8,6 +8,7 @@ import { BaseLayout } from './modules/BaseLayout';
 import { Appointments } from './pages/Appointments';
 import { ArticlePage } from './pages/ArticlePage';
 import { MainPage } from './pages/MainPage';
+import { Messages } from './pages/Messages';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route element={<MainPage />} path={ROUTES.MAIN_PAGE} />
             <Route path={ROUTES.APPOINTMENTS} element={<Appointments />} />
             <Route path={ROUTES.ARTICLE} element={<ArticlePage />} />
+            <Route path={ROUTES.MESSAGES} element={<Messages />} />
           </Route>
         </Routes>
       </Router>

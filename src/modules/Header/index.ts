@@ -1,1 +1,2 @@
-export { Header } from './Header';
+export { Container as Header } from './Container';
+export { headerReducer } from './store';
