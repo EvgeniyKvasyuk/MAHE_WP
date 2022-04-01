@@ -1,7 +1,16 @@
 @import '_colors.css';
+@import '_sizes.css';
 
 .footer {
   display: flex;
-  padding: 1rem 5rem;
+  padding: 1rem $app-bap-general-padding;
   background-color: $color-background-primary;
+
+  @media (max-width: $screenTabletMax) {
+    padding: 1rem $app-bap-general-tablet-padding;
+  }
+
+  @media (max-width: $screenMobileMax) {
+    padding: 1rem $app-bap-general-mobile-padding;
+  }
 }
