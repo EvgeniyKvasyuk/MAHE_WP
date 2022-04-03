@@ -10,6 +10,7 @@ import { ArticlePage } from './pages/ArticlePage';
 import { MainPage } from './pages/MainPage';
 
 function App() {
+  console.log('new');
   return (
     <StyledEngineProvider injectFirst>
       <Router>
