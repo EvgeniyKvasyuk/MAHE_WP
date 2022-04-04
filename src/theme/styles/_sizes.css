@@ -1,4 +1,6 @@
-$general-padding: 20px;
+$app-bap-general-padding: 5rem;
+$app-bap-general-tablet-padding: 2.5rem;
+$app-bap-general-mobile-padding: 1.25rem;
 $main-menu-width: 60px;
 $main-menu-item-height: 60px;
 
