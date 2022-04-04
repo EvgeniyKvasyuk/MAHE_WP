@@ -1,6 +1,6 @@
 {
   "name": "my-appt",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.8.2",
@@ -13,7 +13,6 @@
     "classnames": "^2.3.1",
     "css-loader": "^6.5.1",
     "css-minimizer-webpack-plugin": "^3.2.0",
-    "dotenv": "^10.0.0",
     "dotenv-expand": "^5.1.0",
     "file-loader": "^6.2.0",
     "fs-extra": "^10.0.0",
@@ -73,7 +72,8 @@
     "lint-staged": "lint-staged",
     "typecheck": "set NODE_OPTIONS=--max_old_space_size=6144 && tsc --noEmit",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "semantic-release": "dotenv npx semantic-release"
   },
   "browserslist": {
     "production": [
@@ -149,6 +149,11 @@
     "@commitlint/config-conventional": "^16.2.1",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
     "@reduxjs/toolkit": "^1.8.0",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^8.0.4",
+    "@semantic-release/npm": "^9.0.1",
+    "@semantic-release/release-notes-generator": "^10.0.3",
     "@storybook/addon-actions": "^6.4.19",
     "@storybook/addon-essentials": "^6.4.19",
     "@storybook/addon-interactions": "^6.4.19",
@@ -171,6 +176,8 @@
     "babel-plugin-named-asset-import": "^0.3.8",
     "babel-preset-react-app": "^10.0.1",
     "commitlint": "^16.2.3",
+    "dotenv": "^16.0.0",
+    "dotenv-cli": "^5.1.0",
     "eslint": "^8.3.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^6.15.0",
@@ -186,6 +193,7 @@
     "eslint-webpack-plugin": "^3.1.1",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.7",
+    "semantic-release": "^19.0.2",
     "stylelint-config-rational-order": "0.1.2",
     "stylelint-config-standard": "22.0.0",
     "stylelint-webpack-plugin": "3.2.0"
@@ -196,6 +204,32 @@
     "src/**/*.{js,jsx,ts,tsx,json,md}": [
       "prettier --single-quote --write",
       "git add"
+    ]
+  },
+  "release": {
+    "ci": false,
+    "dryRun": false,
+    "debug": false,
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "config": "./commitlint.config.js"
+        }
+      ],
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/github"
+    ],
+    "prepare": [
+      {
+        "path": "@semantic-release/changelog",
+        "changelogFile": "./docs/changelog.md"
+      }
     ]
   }
 }
