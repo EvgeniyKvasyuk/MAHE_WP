@@ -1,0 +1,44 @@
+@import '_fonts.css';
+@import '_colors.css';
+
+$link-padding: 1.25rem;
+
+@define-mixin menu-item-underline {
+  position: absolute;
+  bottom: 0.5rem;
+  display: block;
+  box-sizing: border-box;
+  width: calc(100% - $link-padding * 2);
+  border: solid 2px $color-background-button;
+  content: '';
+}
+
+.tabs {
+  &__indicator {
+    display: none;
+  }
+
+  &__item {
+    position: relative;
+    padding: 1.25rem;
+    color: $color-text-primary;
+    font-weight: 600;
+    font-size: $medium-font-size;
+    font-family: $main-font-family;
+    text-transform: capitalize;
+
+    &--selected {
+      &::after {
+        @mixin menu-item-underline;
+      }
+    }
+
+    &:hover {
+      background-color: $color-hover-background-button;
+
+      &::after {
+        @mixin menu-item-underline;
+      }
+    }
+  }
+}

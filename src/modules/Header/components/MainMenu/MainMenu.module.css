@@ -6,24 +6,12 @@
   z-index: $z-index-main-menu;
   display: flex;
   flex-direction: row;
+  padding-top: 0;
+  padding-bottom: 0;
   font-size: $medium-font-size;
 
   @media (max-width: $screenTabletMax) {
     display: none;
-  }
-
-  &__item {
-    margin-right: 2.5rem;
-    font-weight: 500;
-
-    &:last-of-type {
-      margin-right: 0;
-    }
-
-    @media (max-width: $screenTabletMax) {
-      margin: 0;
-      padding: 1rem 1.5rem;
-    }
   }
 
   &__content {
