@@ -15,8 +15,18 @@ function App() {
       <Router>
         <Routes>
           <Route element={<BaseLayout />}>
-            <Route element={<MainPage />} path={ROUTES.MAIN_PAGE} />
-            <Route path={ROUTES.APPOINTMENTS} element={<Appointments />} />
+            <Route path={ROUTES.MAIN_PAGE} element={<MainPage />} />
+
+            <Route path={ROUTES.APPOINTMENTS.ROOT} element={<Appointments />} />
+            <Route
+              path={`${ROUTES.APPOINTMENTS.ROOT}${ROUTES.APPOINTMENTS.SCHEDULE_APPOINTMENT}`}
+              element={<Appointments />}
+            />
+            <Route
+              path={`${ROUTES.APPOINTMENTS.ROOT}${ROUTES.APPOINTMENTS.VIEW_APPOINTMENTS}`}
+              element={<Appointments />}
+            />
+
             <Route path={ROUTES.ARTICLE} element={<ArticlePage />} />
           </Route>
         </Routes>

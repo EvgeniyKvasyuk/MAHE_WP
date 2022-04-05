@@ -39,7 +39,8 @@ export function SubMenu({
     <>
       {menuItemsWithSubMenu.map(
         (tab) =>
-          tab.subMenuItems!.length > 0 && (
+          tab.subMenuItems &&
+          tab.subMenuItems.length > 0 && (
             <Menu
               key={tab.id}
               id={getMenuId(tab.id)}
@@ -52,7 +53,7 @@ export function SubMenu({
                 paper: cn('sub-menu__popover'),
               }}
             >
-              {tab.subMenuItems!.map((subMenuItem) => (
+              {tab.subMenuItems.map((subMenuItem) => (
                 <MenuItem
                   className={cn('sub-menu__menu-item')}
                   selected={isMenuItemSelected(`${tab.to}${subMenuItem.to}`)}

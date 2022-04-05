@@ -1,0 +1,11 @@
+@import '_z-index.css';
+@import '_fonts.css';
+@import '_sizes.css';
+
+.main-menu {
+  display: flex;
+
+  @media (max-width: $screenTabletMax) {
+    display: none;
+  }
+}
