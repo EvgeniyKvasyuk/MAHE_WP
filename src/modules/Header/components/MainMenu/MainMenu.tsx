@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useCallback, useMemo } from 'react';
 
 import classNames from 'classnames/bind';
+import { useNavigate, useLocation, matchPath } from 'react-router-dom';
 
 import { ROUTES } from '@common/routes';
 import { AppBar } from '@components/AppBar';
 import { Drawer } from '@components/Drawer';
-import { Link, LinkProps } from '@components/Link';
+import { Tabs } from '@components/Tabs';
 
 import { HeaderState } from '../../store';
 import styles from './MainMenu.module.css';
@@ -13,27 +14,44 @@ import { locale } from './locale';
 
 const cn = classNames.bind(styles);
 
-function MainMenuLink({ to, children }: LinkProps) {
-  return (
-    <Link to={to} underline="hover" className={cn('main-menu__item')}>
-      {children}
-    </Link>
-  );
-}
-
 export interface MainMenuProps {
   mainMenuToggleHandler: VoidFunction;
   mainMenuOpen: HeaderState['mainMenuOpen'];
 }
 
+const tabList = [
+  {
+    id: 0,
+    label: locale.links.home,
+    to: ROUTES.MAIN_PAGE,
+  },
+  {
+    id: 1,
+    label: locale.links.appointments,
+    to: ROUTES.APPOINTMENTS,
+  },
+];
+
 export function MainMenu({ mainMenuToggleHandler, mainMenuOpen }: MainMenuProps) {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const initialTabId = useMemo(() => {
+    const tab = tabList.find(({ to }) => matchPath(to, location.pathname));
+
+    return tab?.id;
+  }, []);
+
+  const handleTabSelect = useCallback(
+    (event: React.SyntheticEvent, newId: number) => {
+      const tabIndex = tabList.findIndex(({ id }) => id === newId);
+      navigate(tabList[tabIndex].to);
+    },
+    [navigate],
+  );
+
   const renderMenuItems = () => {
-    return (
-      <>
-        <MainMenuLink to={ROUTES.MAIN_PAGE}>{locale.links.home}</MainMenuLink>
-        <MainMenuLink to={ROUTES.APPOINTMENTS}>{locale.links.appointments}</MainMenuLink>
-      </>
-    );
+    return <Tabs selectionFollowsFocus value={initialTabId} onChange={handleTabSelect} tabList={tabList} />;
   };
 
   return (
