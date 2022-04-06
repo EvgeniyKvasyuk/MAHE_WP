@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 import { TabProps as TabPropsMaterial } from '@mui/material/Tab';
 import { TabsProps as TabsPropsMaterial } from '@mui/material/Tabs';
 
@@ -6,7 +8,8 @@ export type TabProps = {
 } & Pick<TabPropsMaterial, 'label' | 'icon'>;
 
 export type TabsProps = {
-  tabList: Array<TabProps>;
+  tabList?: Array<TabProps>;
   className?: string;
+  children?: ReactNode;
   onChange?: TabsPropsMaterial['onChange'];
 } & Pick<TabsPropsMaterial, 'value' | 'selectionFollowsFocus'>;

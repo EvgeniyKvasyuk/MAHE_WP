@@ -1,4 +1,4 @@
-import { ReactChild } from 'react';
+import { ReactNode } from 'react';
 
 import { LinkProps as LinkPropsMaterial } from '@mui/material/Link';
 
@@ -7,5 +7,5 @@ export type LinkProps = {
   target?: string;
   rel?: string;
   to: string;
-  children: ReactChild;
+  children: ReactNode;
 } & Pick<LinkPropsMaterial, 'underline'>;
