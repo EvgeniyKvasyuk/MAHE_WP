@@ -1,7 +1,9 @@
 import * as React from 'react';
 
-import ContainerMaterial, { ContainerProps } from '@mui/material/Container';
+import ContainerMaterial, { ContainerProps as ContainerPropsMaterial } from '@mui/material/Container';
 
-export function Container({ children }: Pick<ContainerProps, 'children'>) {
-  return <ContainerMaterial>{children}</ContainerMaterial>;
+export type ContainerProps = Pick<ContainerPropsMaterial, 'children' | 'style'>;
+
+export function Container({ children, style }: ContainerProps) {
+  return <ContainerMaterial style={style}>{children}</ContainerMaterial>;
 }
