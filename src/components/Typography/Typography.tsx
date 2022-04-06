@@ -9,7 +9,7 @@ const cn = classNames.bind(styles);
 
 export type TypographyProps = {
   className?: string;
-} & Pick<TypographyPropsMaterial, 'children' | 'className' | 'variant' | 'align'>;
+} & Pick<TypographyPropsMaterial, 'children' | 'variant' | 'align'>;
 
 export function Typography({ children, className, variant, align }: TypographyProps) {
   return (
