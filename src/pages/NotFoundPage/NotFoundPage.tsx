@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { NotFound } from '@common/NotFound';
+import { NotFound } from '@components/NotFound';
 
 export function NotFoundPage() {
   return <NotFound />;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Typography } from '@mui/material';
+import { Typography } from '@components/Typography';
 
 import { locale } from './locale';
 export function NotFound() {
