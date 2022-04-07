@@ -7,6 +7,7 @@ import { AppBar } from '@components/AppBar';
 import { Icon } from '@components/Icon';
 import { Link } from '@components/Link';
 
+import { ProfileButton } from '../ProfileButton';
 import styles from './MainHeader.module.css';
 import { locale } from './locale';
 import logo from './logo.svg';
@@ -29,6 +30,10 @@ export function MainHeader({ mainMenuToggleHandler }: MainHeaderProps) {
         </Link>
       </div>
 
+      <div className={cn('main-header__profile-button')}>
+        <ProfileButton userFirstName={locale.user_first_name} userLastName={locale.user_last_name} />
+      </div>
+
       <div className={cn('main-header__right-content')}>
         <div className={cn('main-header__content-item')}>
           <Link to={ROUTES.MESSAGES} underline="hover">
@@ -36,7 +41,7 @@ export function MainHeader({ mainMenuToggleHandler }: MainHeaderProps) {
           </Link>
         </div>
         <div className={cn('main-header__content-item')}>{locale.phone_number}</div>
-        <div className={cn('main-header__content-item')}>{locale.user_name}</div>
+        <div className={cn('main-header__content-item')}>{`${locale.user_first_name} ${locale.user_last_name}`}</div>
       </div>
     </AppBar>
   );
