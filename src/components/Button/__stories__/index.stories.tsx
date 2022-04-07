@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Meta, Story } from '@storybook/react';
+import { Meta } from '@storybook/react';
 
 import { Button as ButtonComponent, ButtonProps } from '../Button';
 import { COMPONENT } from './constants';
@@ -17,7 +17,7 @@ export default {
   },
 } as Meta<ButtonProps>;
 
-export const Button: Story<ButtonProps> = () => {
+export function Button(): JSX.Element {
   return (
     <div>
       <div>
@@ -57,6 +57,15 @@ export const Button: Story<ButtonProps> = () => {
         </ButtonComponent>
       </div>
       <div>
+        <h2>Size Medium</h2>
+        <ButtonComponent variant="text" size="large">
+          Firstname Lastname
+        </ButtonComponent>{' '}
+        <ButtonComponent variant="contained" size="medium" color="warning">
+          Firstname Lastname
+        </ButtonComponent>
+      </div>
+      <div>
         <h2>Size Large</h2>
         <ButtonComponent variant="text" size="large">
           Firstname Lastname
@@ -67,4 +76,4 @@ export const Button: Story<ButtonProps> = () => {
       </div>
     </div>
   );
-};
+}
