@@ -37,6 +37,15 @@
     }
   }
 
+  &__profile-button {
+    display: none;
+
+    @media (max-width: $screenTabletMax) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
   &__content-item {
     margin-right: 3.125rem;
 
