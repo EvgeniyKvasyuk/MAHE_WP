@@ -7,11 +7,13 @@ const ignoredFiles = require('react-dev-utils/ignoredFiles');
 const redirectServedPath = require('react-dev-utils/redirectServedPathMiddleware');
 const paths = require('./paths');
 const getHttpsConfig = require('./getHttpsConfig');
+require('dotenv').config(paths.dotenv);
 
 const host = process.env.HOST || '0.0.0.0';
 const sockHost = process.env.WDS_SOCKET_HOST;
 const sockPath = process.env.WDS_SOCKET_PATH; // default: '/ws'
 const sockPort = process.env.WDS_SOCKET_PORT;
+const MOCK_SERVER = process.env.MOCK_SERVER;
 
 module.exports = function (proxy, allowedHost) {
   const disableFirewall =
@@ -110,6 +112,10 @@ module.exports = function (proxy, allowedHost) {
       if (fs.existsSync(paths.proxySetup)) {
         // This registers user provided middleware for proxy reasons
         require(paths.proxySetup)(devServer.app);
+      }
+
+      if (fs.existsSync(paths.mockServer) && MOCK_SERVER=='true') {
+        require(paths.mockServer)(devServer.app);
       }
     },
     onAfterSetupMiddleware(devServer) {

@@ -1,0 +1,10 @@
+[
+  {
+    "url": "/example",
+    "method": "get",
+    "data": {
+      "id": "randomId",
+      "description": "randomDescription"
+    }
+  }
+]
