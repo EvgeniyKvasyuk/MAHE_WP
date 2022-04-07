@@ -8,4 +8,9 @@
   padding-top: 0;
   padding-bottom: 0;
   font-size: $medium-font-size;
+
+  &__tab {
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+  }
 }

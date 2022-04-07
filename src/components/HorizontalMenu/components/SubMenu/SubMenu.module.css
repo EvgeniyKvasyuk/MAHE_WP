@@ -11,13 +11,21 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   }
 
+  &__list {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
   &__menu-item {
     min-width: 15rem;
     padding: 1rem;
     font-size: $medium-font-size;
 
-    &:hover {
+    &--select {
       font-weight: 600;
+    }
+
+    &:hover {
       background-color: $color-hover-background-button;
     }
   }

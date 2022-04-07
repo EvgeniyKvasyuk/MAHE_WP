@@ -1,12 +1,4 @@
-$color-blue-haze: #d3d5e6;
-$color-cerulean-blue: #2944b9;
 $color-white: #ffffff;
-$color-overlay: rgba(0, 0, 0, 0.3);
-$color-crimson: #de1010;
-$color-button-primary-disabled-bg: #de1010;
-$color-button-primary-disabled-text: #de1010;
-$primary-button-shadow-color: rgba(0, 0, 0, 0.2);
-
 $app-bar-shadow-color: rgba(0, 0, 0, 0.15);
 $color-text-primary: #565c61;
 $color-warning: #ff4f23;
