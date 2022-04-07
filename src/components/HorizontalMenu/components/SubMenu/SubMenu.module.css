@@ -1,0 +1,24 @@
+@import '_colors.css';
+@import '_sizes.css';
+@import '_z-index.css';
+@import '_fonts.css';
+
+.sub-menu {
+  z-index: 0;
+
+  &__popover {
+    border-radius: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  }
+
+  &__menu-item {
+    min-width: 15rem;
+    padding: 1rem;
+    font-size: $medium-font-size;
+
+    &:hover {
+      font-weight: 600;
+      background-color: $color-hover-background-button;
+    }
+  }
+}

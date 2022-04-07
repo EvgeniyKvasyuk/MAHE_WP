@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 
 import classNames from 'classnames/bind';
 import { useNavigate, useLocation, matchPath } from 'react-router-dom';
@@ -42,8 +42,11 @@ export function MainMenu({ mainMenuToggleHandler, mainMenuOpen }: MainMenuProps)
     return tab?.id;
   }, []);
 
+  const [selectedTab, setSelectedTab] = useState(initialTabId);
+
   const handleTabSelect = useCallback(
     (event: React.SyntheticEvent, newId: number) => {
+      setSelectedTab(newId);
       const tabIndex = tabList.findIndex(({ id }) => id === newId);
       navigate(tabList[tabIndex].to);
     },
@@ -51,7 +54,7 @@ export function MainMenu({ mainMenuToggleHandler, mainMenuOpen }: MainMenuProps)
   );
 
   const renderMenuItems = () => {
-    return <Tabs selectionFollowsFocus value={initialTabId} onChange={handleTabSelect} tabList={tabList} />;
+    return <Tabs selectionFollowsFocus value={selectedTab} onChange={handleTabSelect} tabList={tabList} />;
   };
 
   return (
