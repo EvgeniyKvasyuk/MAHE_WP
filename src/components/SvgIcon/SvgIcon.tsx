@@ -3,9 +3,10 @@ import React from 'react';
 import SvgIconMaterial, { SvgIconProps as SvgIconPropsMaterial } from '@mui/material/SvgIcon';
 
 import { ICONS } from './icons';
+import { IconType } from './types';
 
 export type SvgIconProps = {
-  icon: string;
+  icon: IconType;
 } & Pick<SvgIconPropsMaterial, 'children' | 'className' | 'fontSize' | 'style'>;
 
 export function SvgIcon({ icon, className, fontSize, style }: SvgIconProps) {

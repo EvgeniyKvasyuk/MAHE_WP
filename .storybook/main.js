@@ -1,7 +1,5 @@
 const path = require('path');
 
-
-
 module.exports = {
   "stories": [
     "../src/**/*.stories.mdx",
@@ -64,7 +62,7 @@ module.exports = {
         and: [/\.(ts|tsx|js|jsx|md|mdx)$/],
       },
     },)
-    
+
     return config;
   }
 }
