@@ -3,20 +3,9 @@
 @import '_sizes.css';
 
 .main-menu {
-  z-index: $z-index-main-menu;
   display: flex;
-  flex-direction: row;
-  padding-top: 0;
-  padding-bottom: 0;
-  font-size: $medium-font-size;
 
   @media (max-width: $screenTabletMax) {
     display: none;
-  }
-
-  &__content {
-    display: flex;
-    flex-direction: column;
-    padding: 1.5rem;
   }
 }
