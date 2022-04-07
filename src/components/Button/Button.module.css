@@ -1,49 +1,81 @@
-/* example */
 @import '_colors.css';
+@import '_fonts.css';
 
 .button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
-  padding: 0 20px;
-  background: none;
-  border: 1px solid $color-blue-haze;
-  border-radius: 4px;
+  padding: 0.625rem 1rem;
+  font-size: $medium-font-size;
+  line-height: 20px;
+  letter-spacing: 0.005em;
+  text-transform: capitalize;
+  border-radius: 8px;
   outline: none;
-  transition: 50ms ease-in-out;
+  box-shadow: none;
   user-select: none;
 
-  &.button-icon-position {
-    &--left {
-      .button__icon {
-        margin: 2px 8px 0 0;
-      }
+  &--small {
+    padding: 0.25rem 0.4rem;
+    font-size: $smallest-font-size;
+    line-height: 18px;
+  }
+
+  &--large {
+    padding: 1rem 1.25rem;
+    font-size: $big-font-size;
+    line-height: 22px;
+  }
+
+  &:hover {
+    color: $color-white;
+    background-color: $color-background-button-hover;
+    border-color: $color-background-button-hover;
+  }
+
+  &:focus {
+    color: $color-white;
+    background-color: $color-background-button-hover;
+    border-color: $color-background-button-hover;
+  }
+
+  &--contained {
+    color: $color-white;
+    background-color: $color-text-button-secondary;
+  }
+
+  &--outlined {
+    color: $color-text-button-secondary;
+    border-color: $color-text-button-secondary;
+
+    &:hover {
+      color: $color-text-button-secondary;
+      background-color: $color-background-button-outlined-hover;
+      border-color: $color-text-button-secondary;
+    }
+  }
+
+  &--warning {
+    color: $color-white;
+    background-color: $color-background-button-warning;
+    border-color: $color-background-button-warning;
+
+    &:hover {
+      background-color: $color-background-button-warning-hover;
+      border-color: $color-background-button-warning-hover;
     }
 
-    &--center {
-      flex-direction: column;
+    &.button--outlined {
+      color: $color-text-button-warning;
+      background-color: transparent;
 
-      .button__icon {
-        position: absolute;
-      }
-    }
-
-    &--right {
-      flex-direction: row-reverse;
-
-      .button__icon {
-        margin: 2px 0 0 8px;
+      &:hover {
+        background-color: $color-background-button-outlined-hover;
+        border-color: $color-text-button-warning;
       }
     }
   }
 
-  &:hover:not(.button--without-hover),
-  &--focused {
-    color: $color-white;
-    background: $color-cerulean-blue;
-    border-color: $color-cerulean-blue;
-    cursor: pointer;
+  &--text {
+    color: $color-text-button-primary;
+    background-color: transparent;
   }
 
   &:disabled {
@@ -52,38 +84,5 @@
     border-color: $color-blue-haze;
     cursor: not-allowed;
     pointer-events: none;
-  }
-
-  &--danger {
-    color: $color-crimson;
-    border: 1px solid $color-crimson;
-
-    &:hover:not(.button--without-hover),
-    &.button--focused {
-      color: $color-white;
-      background: $color-crimson;
-      border-color: $color-crimson;
-    }
-
-    &:disabled {
-      background: none;
-      border: none;
-    }
-  }
-
-  &--primary {
-    color: $color-white;
-    background: $color-cerulean-blue;
-    border: none;
-
-    &:hover:not(.button--without-hover) {
-      box-shadow: 0 4px 4px $primary-button-shadow-color;
-    }
-
-    &:disabled {
-      color: $color-button-primary-disabled-text;
-      background: $color-button-primary-disabled-bg;
-      box-shadow: none;
-    }
   }
 }

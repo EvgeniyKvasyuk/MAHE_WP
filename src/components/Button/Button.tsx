@@ -1,113 +1,48 @@
-/* eslint-disable */
-/* example */
-import * as React from 'react';
+import React, { SyntheticEvent } from 'react';
 
+import ButtonMaterial, { ButtonProps as ButtonPropsMaterial } from '@mui/material/Button';
 import classNames from 'classnames/bind';
 
+import { Icon } from '@components/Icon';
+
 import styles from './Button.module.css';
-import { ButtonProps } from './button-types';
-import { getStyle } from './button-utils';
 
-interface ButtonState {
-    isFocused: boolean;
-    isTabbed: boolean;
-}
-
-export enum KeyboardKeys {
-  TAB = 'Tab',
-}
+export type ButtonProps = {
+  className?: string;
+  endIcon?: string;
+  startIcon?: string;
+  onClick?: (event: SyntheticEvent) => void;
+} & Pick<ButtonPropsMaterial, 'children' | 'disabled' | 'variant' | 'color' | 'size'>;
 
 const cn = classNames.bind(styles);
 
-// example button
-export class Button extends React.Component<ButtonProps, ButtonState> {
-
-  buttonRef = React.createRef<HTMLButtonElement>();
-
-  static defaultProps = {
-    label: '',
-    disabled: false,
-    danger: false,
-    primary: false,
-    iconPositionRight: false,
-    isSmall: false,
-    isSmallText: false,
-    type: 'button' as React.ComponentProps<'button'>['type'],
-  };
-
-  constructor(props: ButtonProps) {
-    super(props);
-
-    this.state = {
-      isFocused: false,
-      isTabbed: false,
-    };
-  }
-
-  componentDidMount() {
-    this.handleRef();
-  }
-
-  componentDidUpdate() {
-    this.handleRef();
-  }
-
-  handleRef = () => {
-    // logic
-  };
-
-  handleKeyUp = ({ key }: React.KeyboardEvent<HTMLButtonElement>) => {
-    if (key === KeyboardKeys.TAB) {
-      this.setState({ isTabbed: true });
-    }
-  };
-
-  handleFocus = () => this.setState({ isFocused: true });
-
-  handleBlur = () => this.setState({ isFocused: false, isTabbed: false });
-
-  render() {
-    const {
-      label,
-      onClick,
-      disabled,
-      primary,
-      danger,
-      icon,
-      width,
-      isSmall,
-      isSmallText,
-      type = 'button',
-      upperCase,
-      withoutHover,
-    } = this.props;
-
-    const { isFocused, isTabbed } = this.state;
-    const style = getStyle({ width });
-
-    return (
-      <button
-        ref={this.buttonRef}
-        type={type}
-        onKeyUp={this.handleKeyUp}
-        onFocus={this.handleFocus}
-        onBlur={this.handleBlur}
-        className={cn('button', {
-          'button--focused': isFocused && isTabbed,
-          'button--primary': primary,
-          'button--contained-red': primary && danger,
-          'button--danger': danger,
-          'button--small': isSmall,
-          'button--small-text': isSmallText,
-          'button--without-hover': withoutHover,
-        })}
-        disabled={disabled}
-        onClick={onClick}
-        style={style}
-      >
-        {icon && <span className={cn('button__icon')}>{icon}</span>}
-        {upperCase && label ? label.toUpperCase() : label}
-      </button>
-    );
-  }
+export function Button({
+  children,
+  className,
+  disabled,
+  endIcon,
+  startIcon,
+  onClick,
+  variant,
+  color,
+  size,
+}: ButtonProps) {
+  return (
+    <ButtonMaterial
+      className={cn('button', className, {
+        'button--contained': variant === 'contained',
+        'button--text': variant === 'text',
+        'button--outlined': variant === 'outlined',
+        'button--warning': color === 'warning',
+        'button--small': size === 'small',
+        'button--large': size === 'large',
+      })}
+      disabled={disabled}
+      onClick={onClick}
+      startIcon={startIcon && <Icon className={cn('button__icon')}>{startIcon}</Icon>}
+      endIcon={endIcon && <Icon className={cn('button__icon')}>{endIcon}</Icon>}
+    >
+      {children}
+    </ButtonMaterial>
+  );
 }
