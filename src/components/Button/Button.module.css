@@ -1,6 +1,33 @@
 @import '_colors.css';
 @import '_fonts.css';
 
+@define-mixin outline-styles {
+  color: $color-text-button-secondary;
+  background-color: transparent;
+  border: 1px solid $color-text-button-secondary;
+}
+
+@define-mixin contained-styles {
+  color: $color-white;
+  background-color: $color-text-button-secondary;
+}
+
+@define-mixin text-styles {
+  color: $color-text-button-primary;
+  background-color: transparent;
+}
+
+@define-mixin warning-styles {
+  color: $color-white;
+  background-color: $color-background-button-warning;
+  border-color: $color-background-button-warning;
+}
+
+@define-mixin warning-outlined-styles {
+  color: $color-text-button-warning;
+  background-color: transparent;
+}
+
 .button {
   padding: 0.625rem 1rem;
   font-size: $medium-font-size;
@@ -24,7 +51,7 @@
     line-height: 22px;
   }
 
-  &:hover {
+  &:hover:not(.button--no-hover) {
     color: $color-white;
     background-color: $color-background-button-hover;
     border-color: $color-background-button-hover;
@@ -37,45 +64,75 @@
   }
 
   &--contained {
-    color: $color-white;
-    background-color: $color-text-button-secondary;
+    @mixin contained-styles;
+
+    &.button--no-hover {
+      &:hover {
+        @mixin contained-styles;
+      }
+    }
   }
 
   &--outlined {
-    color: $color-text-button-secondary;
-    border-color: $color-text-button-secondary;
+    @mixin outline-styles;
 
-    &:hover {
+    &:hover:not(.button--no-hover) {
       color: $color-text-button-secondary;
       background-color: $color-background-button-outlined-hover;
       border-color: $color-text-button-secondary;
     }
+
+    &.button--no-hover {
+      &:hover {
+        @mixin outline-styles;
+      }
+    }
   }
 
   &--warning {
-    color: $color-white;
-    background-color: $color-background-button-warning;
-    border-color: $color-background-button-warning;
+    @mixin warning-styles;
 
-    &:hover {
+    &.button--no-hover {
+      &:hover {
+        @mixin warning-styles;
+      }
+    }
+
+    &:hover:not(.button--no-hover) {
       background-color: $color-background-button-warning-hover;
       border-color: $color-background-button-warning-hover;
     }
 
     &.button--outlined {
-      color: $color-text-button-warning;
-      background-color: transparent;
+      @mixin warning-outlined-styles;
 
-      &:hover {
+      &:hover:not(.button--no-hover) {
         background-color: $color-background-button-outlined-hover;
         border-color: $color-text-button-warning;
+      }
+
+      &.button--no-hover {
+        &:hover {
+          @mixin warning-outlined-styles;
+        }
       }
     }
   }
 
   &--text {
-    color: $color-text-button-primary;
-    background-color: transparent;
+    @mixin text-styles;
+
+    &:hover:not(.button--no-hover) {
+      color: $color-white;
+      background-color: $color-text-button-secondary;
+      border-color: $color-text-button-secondary;
+    }
+
+    &.button--no-hover {
+      &:hover {
+        @mixin text-styles;
+      }
+    }
   }
 
   &:disabled {

@@ -12,6 +12,7 @@ export type ButtonProps = {
   endIcon?: string;
   startIcon?: string;
   onClick?: (event: SyntheticEvent) => void;
+  noHover?: boolean;
 } & Pick<ButtonPropsMaterial, 'children' | 'disabled' | 'variant' | 'color' | 'size'>;
 
 const cn = classNames.bind(styles);
@@ -23,9 +24,10 @@ export function Button({
   endIcon,
   startIcon,
   onClick,
-  variant,
+  variant = 'text',
   color,
-  size,
+  size = 'medium',
+  noHover = false,
 }: ButtonProps) {
   return (
     <ButtonMaterial
@@ -36,6 +38,7 @@ export function Button({
         'button--warning': color === 'warning',
         'button--small': size === 'small',
         'button--large': size === 'large',
+        'button--no-hover': noHover,
       })}
       disabled={disabled}
       onClick={onClick}
