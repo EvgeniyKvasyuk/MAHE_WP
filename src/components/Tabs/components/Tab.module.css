@@ -1,0 +1,44 @@
+@import '_fonts.css';
+@import '_colors.css';
+
+$link-padding: 1.25rem;
+
+@define-mixin menu-item-underline {
+  &::after {
+    position: absolute;
+    bottom: 0.5rem;
+    display: block;
+    box-sizing: border-box;
+    width: calc(100% - $link-padding * 2);
+    border: solid 2px $color-background-button;
+    content: '';
+  }
+}
+
+.tab {
+  position: relative;
+  padding: 1.25rem;
+  /* we need important here to override mui styles */
+  color: $color-text-primary !important;
+  font-weight: 600;
+  font-size: $medium-font-size;
+  font-family: $main-font-family;
+  text-transform: capitalize;
+  opacity: 1;
+
+  &--selected {
+    @mixin menu-item-underline;
+  }
+
+  &--hover {
+    background-color: $color-hover-background-button;
+
+    @mixin menu-item-underline;
+  }
+
+  &:hover {
+    background-color: $color-hover-background-button;
+
+    @mixin menu-item-underline;
+  }
+}

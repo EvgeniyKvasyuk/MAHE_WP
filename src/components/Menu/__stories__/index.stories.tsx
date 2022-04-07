@@ -57,7 +57,13 @@ export const Menu: Story<MenuProps> = () => {
       >
         Open By Hover
       </button>
-      <MenuComponent id="basic-menu" anchorEl={anchorEl} open={open} onClose={handleClose}>
+      <MenuComponent
+        MenuListProps={{ onMouseLeave: handleClose }}
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+      >
         <MenuItem onClick={handleClose}>Profile</MenuItem>
         <MenuItem onClick={handleClose}>My account</MenuItem>
         <Divider />

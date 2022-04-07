@@ -17,29 +17,4 @@ $link-padding: 1.25rem;
   &__indicator {
     display: none;
   }
-
-  &__item {
-    position: relative;
-    padding: 1.25rem;
-    /* we need important here to override mui styles */
-    color: $color-text-primary !important;
-    font-weight: 600;
-    font-size: $medium-font-size;
-    font-family: $main-font-family;
-    text-transform: capitalize;
-
-    &--selected {
-      &::after {
-        @mixin menu-item-underline;
-      }
-    }
-
-    &:hover {
-      background-color: $color-hover-background-button;
-
-      &::after {
-        @mixin menu-item-underline;
-      }
-    }
-  }
 }
