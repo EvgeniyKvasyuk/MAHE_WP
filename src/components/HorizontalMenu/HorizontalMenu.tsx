@@ -43,7 +43,7 @@ export function HorizontalMenu({ menuItemList, className }: HorizontalMenuProps)
       const tabIndex = getTabById(newId, menuItemList);
       const tab = menuItemList[tabIndex];
 
-      if (tab.to && !tab.subMenuItems) {
+      if (tab.to) {
         selectTabAndNavigate(newId, tab.to);
       }
     },
@@ -67,6 +67,7 @@ export function HorizontalMenu({ menuItemList, className }: HorizontalMenuProps)
             onMouseLeave={handleTabMouseLeave}
             selected={tab.id === selectedTab}
             hovered={tab.id === hoveredTabId}
+            className={cn('horizontal-menu__tab')}
           />
         ))}
       </Tabs>

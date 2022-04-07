@@ -79,9 +79,7 @@
   }
 
   &:disabled {
-    color: $color-overlay;
     background: none;
-    border-color: $color-blue-haze;
     cursor: not-allowed;
     pointer-events: none;
   }

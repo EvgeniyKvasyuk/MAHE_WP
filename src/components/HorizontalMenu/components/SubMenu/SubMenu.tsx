@@ -48,21 +48,28 @@ export function SubMenu({
               className={cn('sub-menu')}
               open={hoveredTabId === tab.id}
               onClose={closeMenu}
-              MenuListProps={{ onMouseLeave: closeMenu }}
+              MenuListProps={{ onMouseLeave: closeMenu, className: cn('sub-menu__list') }}
               PopoverClasses={{
                 paper: cn('sub-menu__popover'),
               }}
             >
-              {tab.subMenuItems.map((subMenuItem) => (
-                <MenuItem
-                  className={cn('sub-menu__menu-item')}
-                  selected={isMenuItemSelected(`${tab.to}${subMenuItem.to}`)}
-                  onClick={() => selectTabAndNavigate(tab.id, `${tab.to}${subMenuItem.to}`)}
-                  key={subMenuItem.to}
-                >
-                  {subMenuItem.label}
-                </MenuItem>
-              ))}
+              {tab.subMenuItems.map((subMenuItem) => {
+                const path = `${tab.to}${subMenuItem.to}`;
+                const selected = isMenuItemSelected(path);
+
+                return (
+                  <MenuItem
+                    className={cn('sub-menu__menu-item', {
+                      'sub-menu__menu-item--select': selected,
+                    })}
+                    selected={selected}
+                    onClick={() => selectTabAndNavigate(tab.id, path)}
+                    key={subMenuItem.to}
+                  >
+                    {subMenuItem.label}
+                  </MenuItem>
+                );
+              })}
             </Menu>
           ),
       )}
