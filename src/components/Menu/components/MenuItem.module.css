@@ -1,0 +1,19 @@
+@import '_colors.css';
+@import '_fonts.css';
+
+.menu-item {
+  color: $color-text-secondary;
+  font-size: $medium-font-size;
+
+  &:hover:not(.menu-item--no-hover) {
+    background-color: $color-hover-background-button;
+  }
+
+  &--no-hover {
+    background-color: transparent !important;
+  }
+
+  &__icon {
+    margin-right: 0.625rem;
+  }
+}
