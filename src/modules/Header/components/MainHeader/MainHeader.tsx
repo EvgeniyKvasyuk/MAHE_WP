@@ -9,6 +9,7 @@ import { Icon } from '@components/Icon';
 import { Link } from '@components/Link';
 
 import { ProfileButton } from '../ProfileButton';
+import { ProfileMenuDropdown } from '../ProfileMenuDropdown';
 import styles from './MainHeader.module.css';
 import { locale } from './locale';
 import logo from './logo.svg';
@@ -45,7 +46,7 @@ export function MainHeader({ mainMenuToggleHandler }: MainHeaderProps) {
           <Button startIcon="phone">{locale.phone_number}</Button>
         </div>
         <div className={cn('main-header__content-item')}>
-          <Button endIcon="expand_more">{`${locale.user_first_name} ${locale.user_last_name}`}</Button>
+          <ProfileMenuDropdown triggerButtonText={`${locale.user_first_name} ${locale.user_last_name}`} />
         </div>
       </div>
     </AppBar>
