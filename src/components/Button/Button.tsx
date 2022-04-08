@@ -3,14 +3,14 @@ import React, { SyntheticEvent } from 'react';
 import ButtonMaterial, { ButtonProps as ButtonPropsMaterial } from '@mui/material/Button';
 import classNames from 'classnames/bind';
 
-import { Icon } from '@components/Icon';
+import { SvgIcon, IconType } from '@components/SvgIcon';
 
 import styles from './Button.module.css';
 
 export type ButtonProps = {
   className?: string;
-  endIcon?: string;
-  startIcon?: string;
+  endIcon?: IconType;
+  startIcon?: IconType;
   onClick?: (event: SyntheticEvent) => void;
   noHover?: boolean;
 } & Pick<ButtonPropsMaterial, 'children' | 'disabled' | 'variant' | 'color' | 'size'>;
@@ -42,8 +42,8 @@ export function Button({
       })}
       disabled={disabled}
       onClick={onClick}
-      startIcon={startIcon && <Icon className={cn('button__icon')}>{startIcon}</Icon>}
-      endIcon={endIcon && <Icon className={cn('button__icon')}>{endIcon}</Icon>}
+      startIcon={startIcon && <SvgIcon className={cn('button__icon')} icon={startIcon} />}
+      endIcon={endIcon && <SvgIcon className={cn('button__icon')} icon={endIcon} />}
     >
       {children}
     </ButtonMaterial>

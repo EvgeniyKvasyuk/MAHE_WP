@@ -1,2 +1,2 @@
 export { SvgIcon } from './SvgIcon';
-export { IconType } from './types';
+export type { IconType } from './types';
