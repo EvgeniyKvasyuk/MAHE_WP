@@ -1,3 +1,5 @@
+/* We have to disable this rule because we need to pass native button attributes */
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { SyntheticEvent } from 'react';
 
 import ButtonMaterial, { ButtonProps as ButtonPropsMaterial } from '@mui/material/Button';
@@ -10,9 +12,10 @@ import styles from './Button.module.css';
 export type ButtonProps = {
   className?: string;
   endIcon?: string;
-  startIcon?: string;
-  onClick?: (event: SyntheticEvent) => void;
+  id?: string;
   noHover?: boolean;
+  onClick?: (event: SyntheticEvent) => void;
+  startIcon?: string;
 } & Pick<ButtonPropsMaterial, 'children' | 'disabled' | 'variant' | 'color' | 'size'>;
 
 const cn = classNames.bind(styles);
@@ -20,17 +23,20 @@ const cn = classNames.bind(styles);
 export function Button({
   children,
   className,
+  color,
   disabled,
   endIcon,
-  startIcon,
-  onClick,
-  variant = 'text',
-  color,
-  size = 'medium',
+  id,
   noHover = false,
+  onClick,
+  size = 'medium',
+  startIcon,
+  variant = 'text',
+  ...buttonProps
 }: ButtonProps) {
   return (
     <ButtonMaterial
+      {...buttonProps}
       className={cn('button', className, {
         'button--contained': variant === 'contained',
         'button--text': variant === 'text',
@@ -42,6 +48,7 @@ export function Button({
       })}
       disabled={disabled}
       onClick={onClick}
+      id={id}
       startIcon={startIcon && <Icon className={cn('button__icon')}>{startIcon}</Icon>}
       endIcon={endIcon && <Icon className={cn('button__icon')}>{endIcon}</Icon>}
     >

@@ -49,9 +49,6 @@ export function SubMenu({
               open={hoveredTabId === tab.id}
               onClose={closeMenu}
               MenuListProps={{ onMouseLeave: closeMenu, className: cn('sub-menu__list') }}
-              PopoverClasses={{
-                paper: cn('sub-menu__popover'),
-              }}
             >
               {tab.subMenuItems.map((subMenuItem) => {
                 const path = `${tab.to}${subMenuItem.to}`;
