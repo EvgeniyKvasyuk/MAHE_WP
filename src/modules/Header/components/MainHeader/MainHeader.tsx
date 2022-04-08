@@ -7,12 +7,12 @@ import { AppBar } from '@components/AppBar';
 import { Button } from '@components/Button';
 import { Icon } from '@components/Icon';
 import { Link } from '@components/Link';
+import { SvgIcon } from '@components/SvgIcon';
 
 import { ProfileButton } from '../ProfileButton';
 import { ProfileMenuDropdown } from '../ProfileMenuDropdown';
 import styles from './MainHeader.module.css';
 import { locale } from './locale';
-import logo from './logo.svg';
 
 const cn = classNames.bind(styles);
 
@@ -28,7 +28,7 @@ export function MainHeader({ mainMenuToggleHandler }: MainHeaderProps) {
           menu
         </Icon>
         <Link to="/">
-          <img src={logo} className={cn('main-header__logo')} alt={locale.logo_alt} />
+          <SvgIcon icon="mainLogo" className={cn('main-header__logo')} viewBox="0 0 220 70" />
         </Link>
       </div>
 

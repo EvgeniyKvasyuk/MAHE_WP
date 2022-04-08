@@ -1,3 +1,17 @@
+@import '_sizes.css';
+
 @define-mixin button-shadow {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@define-mixin header-padding {
+  padding: 1.5rem $app-bap-general-padding;
+
+  @media (max-width: $screenTabletMax) {
+    padding: 1.5rem $app-bap-general-tablet-padding;
+  }
+
+  @media (max-width: $screenTabletMax) {
+    padding: 1.5rem $app-bap-general-mobile-padding;
+  }
 }

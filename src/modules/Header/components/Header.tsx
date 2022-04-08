@@ -1,7 +1,10 @@
 import React from 'react';
 
 import classNames from 'classnames/bind';
+import { useSelector } from 'react-redux';
 
+import { mainMenuOpenSelector } from '../store';
+import { BurgerMenu } from './BurgerMenu';
 import styles from './Header.module.css';
 import { MainHeader } from './MainHeader';
 import { MainMenu } from './MainMenu';
@@ -13,14 +16,14 @@ export interface HeaderProps {
 }
 
 export function Header({ mainMenuToggleHandler }: HeaderProps) {
+  const mainMenuOpen = useSelector(mainMenuOpenSelector);
+
   return (
     <div className={cn('app-header')}>
       <MainHeader mainMenuToggleHandler={mainMenuToggleHandler} />
       <MainMenu />
-      {/* TODO-Vladislav add burger menu */}
-      {/*
-        <div mainMenuOpen={mainMenuOpen} mainMenuToggleHandler={mainMenuToggleHandler}>burger menu will be here</div >
-      */}
+
+      <BurgerMenu mainMenuOpen={mainMenuOpen} mainMenuToggleHandler={mainMenuToggleHandler} />
     </div>
   );
 }
