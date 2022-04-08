@@ -1,0 +1,13 @@
+@import '_colors.css';
+@import '_fonts.css';
+
+.number-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  color: $color-white;
+  line-height: 1.5rem;
+  background: $color-text-button-warning;
+  border-radius: 1.25rem;
+}

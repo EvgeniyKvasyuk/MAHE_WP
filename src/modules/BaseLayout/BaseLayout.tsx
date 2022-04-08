@@ -7,6 +7,7 @@ import { Container } from '@components/Container';
 import { Paper } from '@components/Paper';
 import { Footer } from '@modules/Footer';
 import { Header } from '@modules/Header';
+import { WhatsNew } from '@modules/WhatsNew';
 
 import styles from './BaseLayout.module.css';
 
@@ -19,7 +20,10 @@ export function BaseLayout({ children }: { children?: ReactNode }) {
 
       <main className={cn('base-layout__main-content')}>
         <Container>
-          <Paper className={cn('base-layout__paper')}>{children ?? <Outlet />}</Paper>
+          <div className={cn('base-layout__container')}>
+            <Paper className={cn('base-layout__paper')}>{children ?? <Outlet />}</Paper>
+            <WhatsNew />
+          </div>
         </Container>
       </main>
 

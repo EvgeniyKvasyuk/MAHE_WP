@@ -1,0 +1,41 @@
+@import '_colors.css';
+@import '_fonts.css';
+
+.whats-new {
+  width: 25%;
+  padding: 0.93rem 0.3rem;
+  color: $color-text-secondary;
+  font-weight: 500;
+  font-size: $medium-font-size;
+
+  &__heading {
+    margin: 0;
+    padding: 0.3rem 0.3rem 0;
+    font-weight: 500;
+  }
+
+  &__list {
+    padding: 0.5rem;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+  }
+
+  &__link {
+    padding-left: 0.8rem;
+  }
+
+  &__icon-text {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: $icon-color-primary;
+  }
+}

@@ -6,7 +6,13 @@
     margin-bottom: 1.875rem;
   }
 
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
   &__paper {
+    width: 69%;
     padding: 1.5rem;
   }
 }
