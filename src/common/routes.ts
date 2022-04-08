@@ -10,6 +10,7 @@ export const ROUTES = {
     MY_HEALTH_DASHBOARD: '/My Health Dashboard',
   },
   MESSAGES: '/messages',
+  PROFILE: '/profile',
   PRESCRIPTIONS: '/prescriptions',
   ARTICLE: '/article',
 };
