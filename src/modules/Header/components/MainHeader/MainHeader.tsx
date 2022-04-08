@@ -38,14 +38,14 @@ export function MainHeader({ mainMenuToggleHandler }: MainHeaderProps) {
       <div className={cn('main-header__right-content')}>
         <div className={cn('main-header__content-item')}>
           <Link to={ROUTES.MESSAGES}>
-            <Button startIcon="mail-outline">{locale.messages_link}</Button>
+            <Button startIcon="message">{locale.messages_link}</Button>
           </Link>
         </div>
         <div className={cn('main-header__content-item')}>
           <Button startIcon="phone">{locale.phone_number}</Button>
         </div>
         <div className={cn('main-header__content-item')}>
-          <Button endIcon="expand_more">{`${locale.user_first_name} ${locale.user_last_name}`}</Button>
+          <Button endIcon="chevron_down">{`${locale.user_first_name} ${locale.user_last_name}`}</Button>
         </div>
       </div>
     </AppBar>
