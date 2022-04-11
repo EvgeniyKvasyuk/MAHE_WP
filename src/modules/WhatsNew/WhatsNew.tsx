@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import classNames from 'classnames/bind';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Divider } from '@components/Divider';
 import { Link } from '@components/Link';
@@ -8,6 +9,7 @@ import { List, ListItem } from '@components/List';
 import { NumberCircle } from '@components/NumberCircle';
 import { Paper } from '@components/Paper';
 import { SvgIcon, IconType } from '@components/SvgIcon';
+import { getUnreadMessagesCount, unreadCountSelector, StatusEnum } from '@modules/Messages';
 
 import styles from './WhatsNew.module.css';
 import { WHATS_NEW } from './constants';
@@ -16,6 +18,13 @@ import { locale } from './locale';
 const cn = classNames.bind(styles);
 
 export function WhatsNew() {
+  const dispatch = useDispatch();
+  const { count, status } = useSelector(unreadCountSelector);
+
+  useEffect(() => {
+    if (status !== StatusEnum.Pending) dispatch(getUnreadMessagesCount());
+  }, []);
+
   return (
     <Paper className={cn('whats-new')}>
       <h3 className={cn('whats-new__heading')}>{locale.heading}</h3>
@@ -29,7 +38,7 @@ export function WhatsNew() {
                   {item.title}
                 </Link>
               </div>
-              {item.number && <NumberCircle count={item.number} />}
+              {item?.showUnreadCount && count > 0 && <NumberCircle count={count} />}
             </ListItem>
             <Divider />
           </React.Fragment>

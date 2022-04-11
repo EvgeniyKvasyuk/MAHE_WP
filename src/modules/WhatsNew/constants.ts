@@ -6,7 +6,7 @@ export const WHATS_NEW = [
     title: locale.new_messages,
     icon: 'message',
     to: '',
-    number: 4,
+    showUnreadCount: true,
   },
   {
     id: 2,

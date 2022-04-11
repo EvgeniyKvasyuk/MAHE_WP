@@ -1,3 +1,3 @@
 export { Accordion } from './Accordion';
-export { AccordionDetails } from './components/AccordionDetails';
-export { AccordionSummary } from './components/AccordionSummary';
+export { AccordionDetails } from './components';
+export { AccordionSummary } from './components';

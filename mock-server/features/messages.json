@@ -1,0 +1,14 @@
+[
+    {
+      "url": "/messaging/unread",
+      "method": "get",
+      "data": {
+        "id": "9c3b8a01-34c8-4685-8db2-7ff753306d29",
+        "type": "unreads",
+        "attributes": {
+          "unread_count": 5
+        }
+      }
+    }
+  ]
+  
