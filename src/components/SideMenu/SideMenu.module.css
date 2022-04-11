@@ -1,0 +1,48 @@
+@import '_sizes.css';
+@import '_colors.css';
+@import '_mixins.css';
+
+.side-menu {
+  &__paper {
+    width: 24rem;
+
+    @media (max-width: $screenMobileMax) {
+      width: 100%;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem $app-bap-general-tablet-padding;
+
+    @mixin header-padding;
+  }
+
+  &__close-icon {
+    margin-right: 1rem;
+    visibility: hidden;
+    cursor: pointer;
+    fill: $icon-color-primary;
+
+    &--visible {
+      visibility: visible;
+    }
+
+    &--right {
+      margin-right: 0;
+      margin-left: auto;
+    }
+  }
+
+  &__logo {
+    width: 10rem;
+    height: 3.125rem;
+  }
+
+  &__body {
+    padding: 1.5rem $app-bap-general-tablet-padding;
+
+    @mixin header-padding;
+  }
+}

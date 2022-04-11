@@ -7,13 +7,19 @@ import { IconType } from './types';
 
 export type SvgIconProps = {
   icon: IconType;
-} & Pick<SvgIconPropsMaterial, 'children' | 'className' | 'fontSize' | 'style'>;
+} & Pick<SvgIconPropsMaterial, 'children' | 'className' | 'fontSize' | 'style' | 'viewBox' | 'onClick'>;
 
-export function SvgIcon({ icon, className, fontSize, style }: SvgIconProps) {
+export function SvgIcon({ icon, className, fontSize, style, viewBox, onClick }: SvgIconProps) {
   const Icon = typeof icon === 'string' ? ICONS[icon] : icon;
 
   return (
-    <SvgIconMaterial style={style} className={className} fontSize={fontSize}>
+    <SvgIconMaterial
+      style={style}
+      className={className}
+      viewBox={viewBox}
+      fontSize={fontSize}
+      onClick={onClick}
+    >
       <Icon />
     </SvgIconMaterial>
   );

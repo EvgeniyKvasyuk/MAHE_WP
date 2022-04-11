@@ -4,9 +4,18 @@ import DrawerMaterial, { DrawerProps as DrawerPropsMaterial } from '@mui/materia
 
 export type DrawerProps = {
   className?: string;
+  paperClassName?: string;
 } & Pick<DrawerPropsMaterial, 'children' | 'className' | 'variant' | 'open' | 'onClose' | 'anchor'>;
 
-export function Drawer({ anchor = 'left', children, className, onClose, open = false, variant }: DrawerProps) {
+export function Drawer({
+  anchor = 'left',
+  children,
+  className,
+  onClose,
+  open = false,
+  variant,
+  paperClassName,
+}: DrawerProps) {
   return (
     <DrawerMaterial
       anchor={anchor}
@@ -16,6 +25,9 @@ export function Drawer({ anchor = 'left', children, className, onClose, open = f
       variant={variant}
       ModalProps={{
         keepMounted: true, // Better open performance on mobile.
+      }}
+      PaperProps={{
+        className: paperClassName,
       }}
     >
       {children}
