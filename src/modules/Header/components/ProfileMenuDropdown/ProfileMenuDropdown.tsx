@@ -57,7 +57,7 @@ export function ProfileMenuDropdown({ triggerButtonText }: ProfileMenuProps) {
   return (
     <div className={cn('profile-menu')}>
       <Button
-        endIcon="chevron_down"
+        endIcon="chevronDown"
         onClick={handleTriggerButtonClick}
         id={TRIGGER_ID}
         variant={open ? 'contained' : 'text'}

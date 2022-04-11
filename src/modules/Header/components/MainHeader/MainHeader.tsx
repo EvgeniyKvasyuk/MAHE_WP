@@ -5,7 +5,6 @@ import classNames from 'classnames/bind';
 import { ROUTES } from '@common/routes';
 import { AppBar } from '@components/AppBar';
 import { Button } from '@components/Button';
-import { Icon } from '@components/Icon';
 import { Link } from '@components/Link';
 import { SvgIcon } from '@components/SvgIcon';
 
@@ -24,9 +23,8 @@ export function MainHeader({ mainMenuToggleHandler }: MainHeaderProps) {
   return (
     <AppBar className={cn('main-header')}>
       <div className={cn('main-header__left-content')}>
-        <Icon className={cn('main-header__menu-button')} onClick={mainMenuToggleHandler}>
-          menu
-        </Icon>
+        <SvgIcon icon="burger" className={cn('main-header__menu-button')} onClick={mainMenuToggleHandler} />
+
         <Link to="/">
           <SvgIcon icon="mainLogo" className={cn('main-header__logo')} viewBox="0 0 220 70" />
         </Link>

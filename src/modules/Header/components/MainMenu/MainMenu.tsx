@@ -4,8 +4,8 @@ import classNames from 'classnames/bind';
 
 import { HorizontalMenu } from '@components/HorizontalMenu';
 
+import { TAB_LIST } from '../../constants';
 import styles from './MainMenu.module.css';
-import { TAB_LIST } from './constants';
 
 const cn = classNames.bind(styles);
 
