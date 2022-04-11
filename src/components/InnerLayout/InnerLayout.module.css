@@ -1,0 +1,44 @@
+@import '_sizes.css';
+
+@define-mixin sidebar {
+  flex: 1 1 auto;
+  box-sizing: border-box;
+  max-width: $sidebarDesktopMaxWidth;
+
+  @media (max-width: $screenMobileMax) {
+    max-width: none;
+    margin: 0;
+  }
+}
+
+.inner-layout {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: $screenDesktopMin;
+  margin: auto;
+
+  @media (max-width: $screenTabletMax) {
+    padding: 0 1rem;
+  }
+
+  @media (max-width: $screenMobileMax) {
+    flex-direction: column;
+  }
+
+  &__left-sidebar {
+    margin-right: 1.5rem;
+
+    @mixin sidebar;
+  }
+
+  &__right-sidebar {
+    margin-left: 1.5rem;
+
+    @mixin sidebar;
+  }
+
+  &__content {
+    flex: 1 1 auto;
+  }
+}

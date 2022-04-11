@@ -116,6 +116,7 @@ module.exports = {
     'no-restricted-globals': 'warn',
     'react/no-array-index-key': 'warn',
     'react/jsx-curly-brace-presence': 'warn',
+    'react/function-component-definition': 'off',
     'no-unused-expressions': 'warn',
     'no-continue': 'warn',
     'import/no-named-as-default': 'warn',

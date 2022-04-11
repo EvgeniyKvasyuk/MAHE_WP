@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Meta, Story } from '@storybook/react';
 
 import { NotFound } from '@components/NotFound';
+
 import { ErrorBoundary as ErrorBoundaryComponent } from '../ErrorBoundary';
 import { ErrorBoundaryProps } from '../error-boundary-types';
 import { COMPONENT } from './constants';

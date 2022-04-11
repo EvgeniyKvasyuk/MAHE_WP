@@ -1,7 +1,7 @@
 @import '_fonts.css';
 @import '_colors.css';
 
-$link-padding: 1.25rem;
+$link-padding: 1rem;
 
 @define-mixin menu-item-underline {
   &::after {
@@ -17,7 +17,7 @@ $link-padding: 1.25rem;
 
 .tab {
   position: relative;
-  padding: 1.25rem;
+  padding: 1rem;
   /* we need important here to override mui styles */
   color: $color-text-primary !important;
   font-weight: 600;

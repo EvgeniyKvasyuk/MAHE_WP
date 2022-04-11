@@ -8,4 +8,12 @@
   box-shadow: 0 2px 4px $app-bar-shadow-color;
 
   @mixin header-padding;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: $screenDesktopMin;
+    margin: auto;
+  }
 }

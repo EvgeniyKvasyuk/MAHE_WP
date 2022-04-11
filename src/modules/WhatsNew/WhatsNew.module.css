@@ -2,20 +2,14 @@
 @import '_fonts.css';
 
 .whats-new {
-  width: 25%;
-  padding: 0.93rem 0.3rem;
+  padding: 1rem;
   color: $color-text-secondary;
   font-weight: 500;
   font-size: $medium-font-size;
 
   &__heading {
     margin: 0;
-    padding: 0.3rem 0.3rem 0;
     font-weight: 500;
-  }
-
-  &__list {
-    padding: 0.5rem;
   }
 
   &__item {
@@ -25,7 +19,7 @@
   }
 
   &__link {
-    padding-left: 0.8rem;
+    padding-left: 1.125rem;
   }
 
   &__icon-text {

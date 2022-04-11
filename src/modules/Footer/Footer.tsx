@@ -7,6 +7,10 @@ import { locale } from './locale';
 
 const cn = classNames.bind(styles);
 
-export function Footer() {
-  return <footer className={cn('footer')}>{locale.title}</footer>;
+type Props = {
+  className?: string;
+};
+
+export function Footer({ className }: Props) {
+  return <footer className={cn('footer', className)}>{locale.title}</footer>;
 }
