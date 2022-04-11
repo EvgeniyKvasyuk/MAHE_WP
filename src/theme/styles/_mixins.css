@@ -12,6 +12,6 @@
   }
 
   @media (max-width: $screenTabletMax) {
-    padding: 1.5rem $app-bap-general-mobile-padding;
+    padding: $app-bap-general-mobile-padding;
   }
 }

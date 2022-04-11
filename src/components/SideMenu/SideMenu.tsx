@@ -27,7 +27,7 @@ export function SideMenu({ anchor = AnchorEnum.left, children, onClose, open, cl
     <Drawer
       className={cn('side-menu', className)}
       paperClassName={cn('side-menu__paper')}
-      anchor={AnchorEnum.left}
+      anchor={anchor}
       open={open}
       onClose={onClose}
     >

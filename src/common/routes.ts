@@ -7,7 +7,7 @@ export const ROUTES = {
   },
   MY_HEALTH: {
     ROOT: '/my_health',
-    MY_HEALTH_DASHBOARD: '/My Health Dashboard',
+    MY_HEALTH_DASHBOARD: '/my_health_dashboard',
   },
   MESSAGES: '/messages',
   PROFILE: '/profile',

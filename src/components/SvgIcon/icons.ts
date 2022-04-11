@@ -1,3 +1,4 @@
+import { ReactComponent as AccountCircleIcon } from '@assets/account_circle.svg';
 import { ReactComponent as ArrowRightIcon } from '@assets/arrow_right.svg';
 import { ReactComponent as BurgerIcon } from '@assets/burger.svg';
 import { ReactComponent as ChevronDownIcon } from '@assets/chevron_down.svg';
@@ -9,19 +10,24 @@ import { ReactComponent as MicroScopeIcon } from '@assets/microscope.svg';
 import { ReactComponent as PhoneIcon } from '@assets/phone.svg';
 import { ReactComponent as RefillIcon } from '@assets/refill.svg';
 import { ReactComponent as ScheduleIcon } from '@assets/schedule.svg';
+import { ReactComponent as SignOutIcon } from '@assets/sign_out.svg';
 import { ReactComponent as TrophyIcon } from '@assets/trophy.svg';
+import { ReactComponent as UnionIcon } from '@assets/union.svg';
 
 export const ICONS = {
   arrowRight: ArrowRightIcon,
+  accountCircle: AccountCircleIcon,
   burger: BurgerIcon,
   medicalBoard: MedicalClipBoardIcon,
   message: MessageIcon,
   microScope: MicroScopeIcon,
   refill: RefillIcon,
   schedule: ScheduleIcon,
+  signOut: SignOutIcon,
   trophy: TrophyIcon,
   phone: PhoneIcon,
   chevronDown: ChevronDownIcon,
   close: CloseIcon,
   mainLogo: MainLogoIcon,
+  union: UnionIcon,
 } as const;

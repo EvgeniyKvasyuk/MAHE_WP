@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 
 import { Divider } from '@components/Divider';
 import { MenuItem } from '@components/Menu';
+import { IconType } from '@components/SvgIcon';
 
 import styles from './ProfileMenuItem.module.css';
 
@@ -14,7 +15,7 @@ export interface ProfileMenuItemProps {
   noHover?: boolean;
   halfPadding?: boolean;
   children: ReactNode;
-  leftIcon?: string;
+  leftIcon?: IconType;
 }
 
 export function ProfileMenuItem({ className, noHover, children, halfPadding, leftIcon }: ProfileMenuItemProps) {
