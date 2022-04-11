@@ -6,7 +6,9 @@ import { AppBar as AppBarComponent } from '../AppBar';
 import { AppBarProps } from '../app-bar-types';
 import { COMPONENT } from './constants';
 
-const AppBarContent = () => <div>Menu</div>;
+function AppBarContent() {
+  return <div>Menu</div>;
+}
 
 export default {
   title: COMPONENT.TITLE,

@@ -8,17 +8,10 @@ import { AppBarProps } from './app-bar-types';
 
 const cn = classNames.bind(styles);
 
-export function AppBar({
-  children,
-  className,
-  position = 'static',
-}: AppBarProps) {
+export function AppBar({ children, className, position = 'static' }: AppBarProps) {
   return (
-    <AppBarMaterial
-      className={cn('app-bar', className)}
-      position={position}
-    >
-      {children}
+    <AppBarMaterial className={cn('app-bar', className)} position={position}>
+      <div className={cn('app-bar__content')}>{children}</div>
     </AppBarMaterial>
   );
 }

@@ -3,6 +3,7 @@ import React from 'react';
 import { Typography } from '@components/Typography';
 
 import { locale } from './locale';
+
 export function NotFound() {
   return (
     <>

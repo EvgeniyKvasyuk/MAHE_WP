@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { StyledEngineProvider } from '@mui/material';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
@@ -14,9 +15,11 @@ import './index.css';
 
 ReactDOM.render(
   <Provider store={store}>
-    <ErrorBoundary fallBackComponent={NotFoundPage}>
-      <App />
-    </ErrorBoundary>
+    <StyledEngineProvider injectFirst>
+      <ErrorBoundary fallBackComponent={NotFoundPage}>
+        <App />
+      </ErrorBoundary>
+    </StyledEngineProvider>
   </Provider>,
   document.getElementById('root'),
 );

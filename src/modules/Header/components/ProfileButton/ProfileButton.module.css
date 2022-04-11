@@ -2,8 +2,6 @@
 @import '_sizes.css';
 
 .profile-button {
-  width: 3rem;
-  height: 3rem;
   font-size: $regular-font-size;
 
   &__text {

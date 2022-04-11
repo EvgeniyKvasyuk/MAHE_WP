@@ -1,8 +1,8 @@
-$app-bap-general-padding: 5rem;
+$app-bap-general-padding: 0;
 $app-bap-general-tablet-padding: 2.5rem;
-$app-bap-general-mobile-padding: 1.25rem;
+$app-bap-general-mobile-padding: 1rem;
 
-/* sizes */
+/* breakpoints */
 $screenMobileMin: 320px;
 $screenMobileMax: 767px;
 $screenTabletMin: 768px;
@@ -10,3 +10,7 @@ $screenTabletMax: 1024px;
 $screenLaptopMin: 1025px;
 $screenLaptopMax: 1279px;
 $screenDesktopMin: 1280px;
+
+/* sizes */
+
+$sidebarDesktopMaxWidth: 25.625rem;
