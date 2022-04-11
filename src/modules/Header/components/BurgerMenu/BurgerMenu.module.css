@@ -1,0 +1,40 @@
+@import '_sizes.css';
+@import '_fonts.css';
+@import '_z-index.css';
+
+.burger-menu {
+  &__accordion {
+    width: 100%;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  &__item {
+    align-items: flex-end;
+    padding: 0 0.5rem;
+
+    &--bold {
+      font-weight: 600;
+    }
+  }
+
+  &__sub-menu {
+    padding: 0;
+  }
+
+  &__sub-menu-details {
+    padding: 0.5rem;
+  }
+
+  &__accordion-summary {
+    align-items: flex-end;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  &__accordion-summary-content {
+    margin-bottom: 0;
+  }
+}

@@ -18,13 +18,14 @@ export interface SideMenuProps {
   anchor?: AnchorEnum;
   children: ReactNode;
   onClose: VoidFunction;
+  className?: string;
   open: boolean;
 }
 
-export function SideMenu({ anchor = AnchorEnum.left, children, onClose, open }: SideMenuProps) {
+export function SideMenu({ anchor = AnchorEnum.left, children, onClose, open, className }: SideMenuProps) {
   return (
     <Drawer
-      className={cn('side-menu')}
+      className={cn('side-menu', className)}
       paperClassName={cn('side-menu__paper')}
       anchor={AnchorEnum.left}
       open={open}

@@ -1,4 +1,5 @@
 import { ROUTES } from '@common/routes';
+import { TabProps } from '@components/HorizontalMenu';
 
 import { locale } from './locale';
 
@@ -38,4 +39,4 @@ export const TAB_LIST = [
     to: ROUTES.MY_HEALTH.ROOT,
     subMenuItems: MY_HEALTH_SUB_MENU_ITEMS,
   },
-];
+] as Array<TabProps>;

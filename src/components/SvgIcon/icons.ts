@@ -1,4 +1,5 @@
 import { ReactComponent as ArrowRightIcon } from '@assets/arrow_right.svg';
+import { ReactComponent as BurgerIcon } from '@assets/burger.svg';
 import { ReactComponent as ChevronDownIcon } from '@assets/chevron_down.svg';
 import { ReactComponent as CloseIcon } from '@assets/close.svg';
 import { ReactComponent as MainLogoIcon } from '@assets/main_logo.svg';
@@ -12,6 +13,7 @@ import { ReactComponent as TrophyIcon } from '@assets/trophy.svg';
 
 export const ICONS = {
   arrowRight: ArrowRightIcon,
+  burger: BurgerIcon,
   medicalBoard: MedicalClipBoardIcon,
   message: MessageIcon,
   microScope: MicroScopeIcon,
@@ -19,7 +21,7 @@ export const ICONS = {
   schedule: ScheduleIcon,
   trophy: TrophyIcon,
   phone: PhoneIcon,
-  chevron_down: ChevronDownIcon,
+  chevronDown: ChevronDownIcon,
   close: CloseIcon,
   mainLogo: MainLogoIcon,
 } as const;
