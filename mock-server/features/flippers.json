@@ -1,0 +1,22 @@
+[
+  {
+    "url": "/flippers",
+    "method": "get",
+    "data": {
+      "data":  {
+        "id": "9c3b8a01-34c8-4685-8db2-7ff753306d29",
+        "type": "flippers",
+        "attributes": [
+          {
+            "key": "hide_med_refills",
+            "value": true
+          },
+          {
+            "key": "hide_secure_messaging",
+            "value": true
+          }
+        ]
+      }
+    }
+  }
+]

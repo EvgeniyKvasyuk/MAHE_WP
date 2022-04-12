@@ -1,4 +1,4 @@
-import { StatusEnum } from './constants';
+import { StatusEnum } from '@common/constants';
 
 export interface MessagesState {
   unreadMessages: {
