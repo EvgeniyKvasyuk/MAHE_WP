@@ -11,8 +11,8 @@ const cn = classNames.bind(styles);
 export function SideBar() {
   return (
     <div className={cn('side-bar')}>
-      <WhatsNew />
-      <QuickLinks />
+      <WhatsNew className={cn('side-bar__container')} />
+      <QuickLinks className={cn('side-bar__container')} />
     </div>
   );
 }

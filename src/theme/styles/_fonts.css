@@ -1,3 +1,5 @@
+@import '_colors.css';
+
 $main-font-family: 'Roboto', sans-serif;
 $monospace-font-family: 'RobotoMono', monospace;
 
@@ -7,3 +9,19 @@ $regular-font-size: 1rem; /* 16px */
 $medium-font-size: 1.125rem; /* 18px */
 $big-font-size: 1.25rem; /* 20px */
 $biggest-font-size: 1.5rem; /* 24px */
+$biggest-font-size: 1.5rem; /* 24px */
+$main-block-font-size: 1.75rem; /* 28px */
+
+/* typography */
+
+@define-mixin block-header {
+  color: $color-text-secondary;
+  font-weight: 500;
+  font-size: $biggest-font-size;
+}
+
+@define-mixin main-block-header {
+  color: $color-text-secondary;
+  font-weight: 300;
+  font-size: $main-block-font-size;
+}

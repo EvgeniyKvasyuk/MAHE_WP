@@ -4,13 +4,14 @@
 .base-layout {
   display: flex;
   flex-direction: column;
+  min-width: $screenMobileMin;
   min-height: 100vh;
 
   &__main-content {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
 
-    @media (max-width: $screenLaptopMax) {
+    @media (max-width: $screenMobileMax) {
       margin-top: 1rem;
       margin-bottom: 1rem;
     }

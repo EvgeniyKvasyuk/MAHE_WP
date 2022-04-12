@@ -1,0 +1,1 @@
+export { MainPageActions } from './MainPageActions';

@@ -15,9 +15,13 @@ import { locale } from './locale';
 
 const cn = classNames.bind(styles);
 
-export function QuickLinks() {
+type Props = {
+  className?: string;
+};
+
+export function QuickLinks({ className }: Props) {
   return (
-    <Paper className={cn('quick-links')}>
+    <Paper className={cn('quick-links', className)}>
       <Typography className={cn('quick-links__heading')} variant="h3">
         {locale.heading}
       </Typography>
