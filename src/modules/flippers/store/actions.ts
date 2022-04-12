@@ -7,7 +7,7 @@ export const getFlippers = createAsyncThunk('flippers/fetchFlippers', async (_, 
     const data = await fetch.get({ url: '/flippers' });
     const res = await data.response;
 
-    return res?.data?.attributes ?? [];
+    return res?.data?.data?.attributes ?? [];
   } catch (error) {
     return rejectWithValue(error);
   }

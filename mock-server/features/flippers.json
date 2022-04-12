@@ -13,6 +13,10 @@
           },
           {
             "key": "hide_secure_messaging",
+            "value": false
+          },
+          {
+            "key": "show_covid_scheduling_alert",
             "value": true
           }
         ]
