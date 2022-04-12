@@ -14,6 +14,7 @@ export type ButtonProps = {
   endIcon?: IconType;
   id?: string;
   noHover?: boolean;
+  disableRipple?: boolean;
   onClick?: (event: SyntheticEvent) => void;
   startIcon?: IconType;
 } & Pick<ButtonPropsMaterial, 'children' | 'disabled' | 'variant' | 'color' | 'size'>;
@@ -32,6 +33,7 @@ export function Button({
   size = 'medium',
   startIcon,
   variant = 'text',
+  disableRipple = false,
   ...buttonProps
 }: ButtonProps) {
   return (
@@ -49,6 +51,7 @@ export function Button({
       disabled={disabled}
       onClick={onClick}
       id={id}
+      disableRipple={disableRipple}
       startIcon={startIcon && <SvgIcon className={cn('button__icon')} icon={startIcon} />}
       endIcon={endIcon && <SvgIcon className={cn('button__icon')} icon={endIcon} />}
     >

@@ -1,0 +1,58 @@
+@import '_colors.css';
+@import '_fonts.css';
+
+@define-mixin list-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $color-text-secondary;
+  font-weight: 500;
+  font-size: $medium-font-size;
+  line-height: 1.5rem;
+}
+
+.quick-links {
+  margin-top: 1rem;
+  padding: 1rem;
+
+  &__heading {
+    padding-bottom: 0.6rem;
+    color: $color-sidebar-text-heading;
+    font-size: $biggest-font-size;
+  }
+
+  &__list {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &__list-item {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  &__button {
+    width: 100%;
+    padding: 0;
+  }
+
+  &__button-content {
+    @mixin list-content;
+
+    width: 100%;
+  }
+
+  &__icon {
+    width: 1rem;
+    height: 1rem;
+    fill: $color-text-secondary;
+  }
+
+  &__link {
+    width: 100%;
+  }
+
+  &__link-content {
+    @mixin list-content;
+  }
+}
