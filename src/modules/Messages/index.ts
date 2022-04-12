@@ -1,1 +1,1 @@
-export { messagesReducer, getUnreadMessagesCount, unreadCountSelector, StatusEnum } from './store';
+export { messagesReducer, getUnreadMessagesCount, unreadCountSelector } from './store';

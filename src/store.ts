@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import { headerReducer } from './modules/Header';
 import { messagesReducer } from './modules/Messages';
+import { flippersReducer } from './modules/flippers';
 import { articleReducer } from './pages/ArticlePage';
 
 export const store = configureStore({
@@ -9,6 +10,7 @@ export const store = configureStore({
     article: articleReducer,
     header: headerReducer,
     messages: messagesReducer,
+    flippers: flippersReducer,
   },
 });
 

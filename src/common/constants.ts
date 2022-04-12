@@ -1,6 +1,6 @@
 export enum StatusEnum {
   Uninitialized = 'uninitialized',
   Pending = 'pending',
-  Fullfilled = 'fullfilled',
+  Fulfilled = 'fulfilled',
   Rejected = 'rejected',
 }

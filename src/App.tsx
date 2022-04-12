@@ -4,12 +4,15 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import { ROUTES } from './common/routes';
 import { BaseLayout } from './modules/BaseLayout';
+import { useLoadFlippers } from './modules/flippers';
 import { Appointments } from './pages/Appointments';
 import { ArticlePage } from './pages/ArticlePage';
 import { MainPage } from './pages/MainPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
 function App() {
+  useLoadFlippers();
+
   return (
     <Router>
       <Routes>

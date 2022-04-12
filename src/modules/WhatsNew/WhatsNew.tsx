@@ -1,8 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import classNames from 'classnames/bind';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { StatusEnum } from '@common/constants';
+import { useIgnoreEffectDeps } from '@common/hooks';
 import { Divider } from '@components/Divider';
 import { Link } from '@components/Link';
 import { List, ListItem } from '@components/List';
@@ -10,7 +12,7 @@ import { NumberCircle } from '@components/NumberCircle';
 import { Paper } from '@components/Paper';
 import { SvgIcon, IconType } from '@components/SvgIcon';
 import { Typography } from '@components/Typography';
-import { getUnreadMessagesCount, unreadCountSelector, StatusEnum } from '@modules/Messages';
+import { getUnreadMessagesCount, unreadCountSelector } from '@modules/Messages';
 
 import styles from './WhatsNew.module.css';
 import { WHATS_NEW } from './constants';
@@ -22,9 +24,9 @@ export function WhatsNew() {
   const dispatch = useDispatch();
   const { count, status } = useSelector(unreadCountSelector);
 
-  useEffect(() => {
+  useIgnoreEffectDeps(() => {
     if (status !== StatusEnum.Pending) dispatch(getUnreadMessagesCount());
-  }, []);
+  });
 
   return (
     <Paper className={cn('whats-new')}>
