@@ -16,6 +16,7 @@ export type MenuProps = {
   onClick?: (event: React.MouseEvent<HTMLElement>, value: TabProps['value']) => unknown;
   onMouseOver?: (event: React.MouseEvent<HTMLElement>) => unknown;
   onMouseLeave?: (event: React.MouseEvent<HTMLElement>) => unknown;
+  onTouchStart?: (event: React.TouchEvent<HTMLDivElement>) => unknown;
 } & Pick<TabProps, 'label' | 'onChange' | 'value'>;
 
 export function Tab({
@@ -25,6 +26,7 @@ export function Tab({
   onClick,
   onMouseOver,
   onMouseLeave,
+  onTouchStart,
   selected = false,
   hovered = false,
   onChange,
@@ -39,6 +41,7 @@ export function Tab({
       value={value}
       label={label}
       onMouseOver={onMouseOver}
+      onTouchStart={onTouchStart}
       onMouseLeave={onMouseLeave}
       onClick={handleTabClick}
       onChange={onChange}

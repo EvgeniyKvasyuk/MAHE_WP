@@ -35,6 +35,11 @@ export function SubMenu({
     [location.pathname],
   );
 
+  const handleMenuItemClick = (tabId: number, path: string) => () => {
+    selectTabAndNavigate(tabId, path);
+    closeMenu();
+  };
+
   return (
     <>
       {menuItemsWithSubMenu.map(
@@ -60,7 +65,7 @@ export function SubMenu({
                       'sub-menu__menu-item--select': selected,
                     })}
                     selected={selected}
-                    onClick={() => selectTabAndNavigate(tab.id, path)}
+                    onClick={handleMenuItemClick(tab.id, path)}
                     key={subMenuItem.to}
                   >
                     {subMenuItem.label}

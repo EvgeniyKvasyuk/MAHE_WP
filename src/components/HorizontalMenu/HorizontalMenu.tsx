@@ -3,6 +3,7 @@ import React, { useCallback, useMemo, useState } from 'react';
 import classNames from 'classnames/bind';
 import { useLocation, useNavigate } from 'react-router-dom';
 
+import { isTouchDevice } from '@common/utils';
 import { AppBar } from '@components/AppBar';
 import { Tab, Tabs } from '@components/Tabs';
 
@@ -25,17 +26,17 @@ export function HorizontalMenu({ menuItemList, className }: HorizontalMenuProps)
 
   const [selectedTab, setSelectedTab] = useState(() => getInitialTabId(location.pathname, menuItemList));
 
-  const { closeMenu, handleTabMouseLeave, handleTabMouseOver, hoveredTabId, menuAnchorEl } = useOpenOnHover();
+  const { closeMenu, handleTabMouseLeave, handleTouchStart, handleTabMouseOver, hoveredTabId, menuAnchorEl } =
+    useOpenOnHover();
 
   const selectTabAndNavigate = useCallback(
     (tabId: number, path: string) => {
       if (path) {
         setSelectedTab(tabId);
         navigate(path);
-        closeMenu();
       }
     },
-    [navigate, closeMenu],
+    [navigate],
   );
 
   const handleTabChange = useCallback(
@@ -45,9 +46,12 @@ export function HorizontalMenu({ menuItemList, className }: HorizontalMenuProps)
 
       if (tab.to) {
         selectTabAndNavigate(newId, tab.to);
+        if (!isTouchDevice()) {
+          closeMenu();
+        }
       }
     },
-    [menuItemList, selectTabAndNavigate],
+    [menuItemList, selectTabAndNavigate, closeMenu],
   );
 
   const menuItemsWithSubMenu = useMemo(
@@ -64,7 +68,8 @@ export function HorizontalMenu({ menuItemList, className }: HorizontalMenuProps)
             value={tab.id}
             label={tab.label}
             onMouseOver={tab.subMenuItems ? handleTabMouseOver(tab.id) : undefined}
-            onMouseLeave={handleTabMouseLeave}
+            onMouseLeave={tab.subMenuItems ? handleTabMouseLeave : undefined}
+            onTouchStart={tab.subMenuItems ? handleTouchStart(tab.id) : undefined}
             selected={tab.id === selectedTab}
             hovered={tab.id === hoveredTabId}
             className={cn('horizontal-menu__tab')}

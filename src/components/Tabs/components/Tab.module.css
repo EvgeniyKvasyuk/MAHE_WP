@@ -20,7 +20,7 @@ $link-padding: 1rem;
   padding: 1rem;
   /* we need important here to override mui styles */
   color: $color-text-primary !important;
-  font-weight: 600;
+  font-weight: 500;
   font-size: $medium-font-size;
   font-family: $main-font-family;
   text-transform: capitalize;
