@@ -1,4 +1,4 @@
-import React, { ReactChild, ReactElement } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 
 import classNames from 'classnames/bind';
 
@@ -7,9 +7,9 @@ import styles from './InnerLayout.module.css';
 const cn = classNames.bind(styles);
 
 type InnerLayoutProps = {
-  children: ReactChild;
-  leftSidebar?: ReactElement;
-  rightSidebar?: ReactElement;
+  children: ReactNode;
+  leftSidebar?: Nullable<ReactElement>;
+  rightSidebar?: Nullable<ReactElement>;
   className?: string;
 };
 

@@ -2,5 +2,7 @@
 @import '_fonts.css';
 
 .side-bar {
-  width: 80%;
+  &__container {
+    margin-bottom: 1.5rem;
+  }
 }

@@ -12,6 +12,8 @@ declare namespace NodeJS {
 
 declare type RootState = ReturnType<typeof import('./store').default>;
 
+declare type Nullable<T> = T | null | undefined;
+
 declare module '*.avif' {
   const src: string;
   export default src;

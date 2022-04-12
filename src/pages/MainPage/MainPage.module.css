@@ -1,0 +1,45 @@
+@import '_sizes.css';
+
+@define-mixin margin-bottom {
+  margin-bottom: 1.5rem;
+
+  @media (max-width: $screenMobileMax) {
+    margin: 0 0 1rem;
+  }
+}
+
+.main-page {
+  &__actions {
+    @mixin margin-bottom;
+  }
+
+  &__whats-new {
+    @mixin margin-bottom;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: $screenMobileMax) {
+      flex-direction: column;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__column {
+    flex: 1 1 auto;
+
+    &_left {
+      margin-right: 0.5rem;
+    }
+
+    &_right {
+      margin-left: 0.5rem;
+    }
+
+    @media (max-width: $screenMobileMax) {
+      margin: 0 0 1rem;
+    }
+  }
+}

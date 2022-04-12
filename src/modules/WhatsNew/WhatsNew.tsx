@@ -20,7 +20,11 @@ import { locale } from './locale';
 
 const cn = classNames.bind(styles);
 
-export function WhatsNew() {
+type Props = {
+  className?: string;
+};
+
+export function WhatsNew({ className }: Props) {
   const dispatch = useDispatch();
   const { count, status } = useSelector(unreadCountSelector);
 
@@ -29,7 +33,7 @@ export function WhatsNew() {
   });
 
   return (
-    <Paper className={cn('whats-new')}>
+    <Paper className={cn('whats-new', className)}>
       <Typography className={cn('whats-new__heading')} variant="h3">
         {locale.heading}
       </Typography>

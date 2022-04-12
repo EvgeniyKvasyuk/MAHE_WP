@@ -13,4 +13,8 @@ export const ROUTES = {
   PROFILE: '/profile',
   PRESCRIPTIONS: '/prescriptions',
   ARTICLE: '/article',
+  // TODO-ekvasiuk mock routes
+  SCHEDULE: '/schedule',
+  REFILL: '/refill',
+  RECORDS: '/records',
 };

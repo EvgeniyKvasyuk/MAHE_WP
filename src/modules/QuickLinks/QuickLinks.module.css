@@ -12,13 +12,10 @@
 }
 
 .quick-links {
-  margin-top: 1rem;
   padding: 1rem;
 
   &__heading {
-    padding-bottom: 0.6rem;
-    color: $color-sidebar-text-heading;
-    font-size: $biggest-font-size;
+    @mixin block-header;
   }
 
   &__list {

@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
 
-import { ICONS } from './icons';
+import { IconKey } from './icons';
 
-export type IconType = FunctionComponent | keyof typeof ICONS;
+export type IconType = FunctionComponent | IconKey;

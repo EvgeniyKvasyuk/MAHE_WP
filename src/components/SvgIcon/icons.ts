@@ -8,6 +8,7 @@ import { ReactComponent as MedicalClipBoardIcon } from '@assets/medicalclipboard
 import { ReactComponent as MessageIcon } from '@assets/message.svg';
 import { ReactComponent as MicroScopeIcon } from '@assets/microscope.svg';
 import { ReactComponent as PhoneIcon } from '@assets/phone.svg';
+import { ReactComponent as RecordsIcon } from '@assets/records.svg';
 import { ReactComponent as RefillIcon } from '@assets/refill.svg';
 import { ReactComponent as ScheduleIcon } from '@assets/schedule.svg';
 import { ReactComponent as SignOutIcon } from '@assets/sign_out.svg';
@@ -15,19 +16,22 @@ import { ReactComponent as TrophyIcon } from '@assets/trophy.svg';
 import { ReactComponent as UnionIcon } from '@assets/union.svg';
 
 export const ICONS = {
-  arrowRight: ArrowRightIcon,
   accountCircle: AccountCircleIcon,
+  arrowRight: ArrowRightIcon,
   burger: BurgerIcon,
+  chevronDown: ChevronDownIcon,
+  close: CloseIcon,
+  mainLogo: MainLogoIcon,
   medicalBoard: MedicalClipBoardIcon,
   message: MessageIcon,
   microScope: MicroScopeIcon,
+  phone: PhoneIcon,
+  records: RecordsIcon,
   refill: RefillIcon,
   schedule: ScheduleIcon,
   signOut: SignOutIcon,
   trophy: TrophyIcon,
-  phone: PhoneIcon,
-  chevronDown: ChevronDownIcon,
-  close: CloseIcon,
-  mainLogo: MainLogoIcon,
   union: UnionIcon,
 } as const;
+
+export type IconKey = keyof typeof ICONS;
