@@ -1,12 +1,13 @@
 import React, { ReactNode } from 'react';
 
 import { Link } from '@components/Link';
+import { IconType } from '@components/SvgIcon';
 
 import { ProfileMenuItem } from './components';
 
 export type MenuItemType = {
   to?: string;
-  icon?: string;
+  icon?: IconType;
   label?: string;
   component?: ReactNode;
   noHover?: boolean;

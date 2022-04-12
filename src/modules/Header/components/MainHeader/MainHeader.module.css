@@ -17,6 +17,7 @@
   &__menu-button {
     display: none;
     margin-right: 1.25rem;
+    cursor: pointer;
 
     @media (max-width: $screenTabletMax) {
       display: block;
@@ -26,6 +27,7 @@
   &__logo {
     width: 13.75rem;
     height: 4.375rem;
+    cursor: pointer;
   }
 
   &__right-content {

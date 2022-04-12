@@ -5,6 +5,7 @@ import classNames from 'classnames/bind';
 import { ROUTES } from '@common/routes';
 import { Button } from '@components/Button';
 import { Menu } from '@components/Menu';
+import { IconType } from '@components/SvgIcon';
 
 import { ProfileMenu } from '../ProfileMenu';
 import { ViewSwitcher } from '../ViewSwitcher';
@@ -19,7 +20,7 @@ export interface ProfileMenuProps {
 
 const MENU_ITEMS = [
   {
-    icon: 'account_circle',
+    icon: 'accountCircle' as IconType,
     to: ROUTES.PROFILE,
     label: locale.links.profile,
   },
@@ -28,7 +29,7 @@ const MENU_ITEMS = [
     noHover: true,
   },
   {
-    icon: 'mail-outline',
+    icon: 'message' as IconType,
     to: ROUTES.MESSAGES,
     label: locale.links.messages,
   },

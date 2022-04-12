@@ -8,8 +8,8 @@ import { Button } from '@components/Button';
 import { Link } from '@components/Link';
 import { SvgIcon } from '@components/SvgIcon';
 
-import { ProfileButton } from '../ProfileButton';
 import { ProfileMenuDropdown } from '../ProfileMenuDropdown';
+import { ProfileSideMenu } from '../ProfileSideMenu';
 import styles from './MainHeader.module.css';
 import { locale } from './locale';
 
@@ -31,7 +31,7 @@ export function MainHeader({ mainMenuToggleHandler }: MainHeaderProps) {
       </div>
 
       <div className={cn('main-header__profile-button')}>
-        <ProfileButton userFirstName={locale.user_first_name} userLastName={locale.user_last_name} />
+        <ProfileSideMenu userFirstName={locale.user_first_name} userLastName={locale.user_last_name} />
       </div>
 
       <div className={cn('main-header__right-content')}>

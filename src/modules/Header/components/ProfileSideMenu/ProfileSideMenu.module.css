@@ -1,0 +1,9 @@
+@import '_fonts.css';
+
+.profile-side-menu {
+  &__user-name {
+    font-weight: 400;
+    font-size: $biggest-font-size;
+    text-transform: capitalize;
+  }
+}
