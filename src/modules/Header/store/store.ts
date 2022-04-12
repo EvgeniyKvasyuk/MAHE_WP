@@ -13,7 +13,10 @@ export const headerSlice = createSlice({
   initialState,
   reducers: {
     mainMenuToggle: (state) => {
-      state.mainMenuOpen = !state.mainMenuOpen;
+      return {
+        ...state,
+        mainMenuOpen: !state.mainMenuOpen,
+      };
     },
   },
 });

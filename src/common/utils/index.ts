@@ -1,1 +1,2 @@
-export { noop } from 'src/common/utils/noop';
+export { noop } from './noop';
+export { isTouchDevice } from './isTouchDevice';
