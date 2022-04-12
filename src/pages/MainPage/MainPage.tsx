@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 
 import { ROUTES } from '@common/routes';
 import { InnerLayout } from '@components/InnerLayout';
-import { WhatsNew } from '@modules/WhatsNew';
+import { SideBar } from '@modules/SideBar';
 
 import { locale } from './locale';
 
 export function MainPage() {
   return (
-    <InnerLayout rightSidebar={<WhatsNew />}>
+    <InnerLayout rightSidebar={<SideBar />}>
       <Link to={ROUTES.ARTICLE}>{locale.article_link}</Link>
     </InnerLayout>
   );

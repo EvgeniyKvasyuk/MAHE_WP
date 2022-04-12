@@ -9,6 +9,7 @@ import { List, ListItem } from '@components/List';
 import { NumberCircle } from '@components/NumberCircle';
 import { Paper } from '@components/Paper';
 import { SvgIcon, IconType } from '@components/SvgIcon';
+import { Typography } from '@components/Typography';
 import { getUnreadMessagesCount, unreadCountSelector, StatusEnum } from '@modules/Messages';
 
 import styles from './WhatsNew.module.css';
@@ -27,7 +28,9 @@ export function WhatsNew() {
 
   return (
     <Paper className={cn('whats-new')}>
-      <h3 className={cn('whats-new__heading')}>{locale.heading}</h3>
+      <Typography className={cn('whats-new__heading')} variant="h3">
+        {locale.heading}
+      </Typography>
       <List className={cn('whats-new__list')}>
         {WHATS_NEW.map((item) => (
           <React.Fragment key={item.id}>
