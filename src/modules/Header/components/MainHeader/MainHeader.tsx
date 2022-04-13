@@ -7,6 +7,7 @@ import { AppBar } from '@components/AppBar';
 import { Button } from '@components/Button';
 import { Link } from '@components/Link';
 import { SvgIcon } from '@components/SvgIcon';
+import { Flipper, FlippersEnum } from '@modules/flippers';
 
 import { ProfileMenuDropdown } from '../ProfileMenuDropdown';
 import { ProfileSideMenu } from '../ProfileSideMenu';
@@ -35,11 +36,13 @@ export function MainHeader({ mainMenuToggleHandler }: MainHeaderProps) {
       </div>
 
       <div className={cn('main-header__right-content')}>
-        <div className={cn('main-header__content-item')}>
-          <Link to={ROUTES.MESSAGES}>
-            <Button startIcon="message">{locale.messages_link}</Button>
-          </Link>
-        </div>
+        <Flipper flipper={FlippersEnum.HideSecureMessaging}>
+          <div className={cn('main-header__content-item')}>
+            <Link to={ROUTES.MESSAGES}>
+              <Button startIcon="message">{locale.messages_link}</Button>
+            </Link>
+          </div>
+        </Flipper>
         <div className={cn('main-header__content-item')}>
           <Button startIcon="phone">{locale.phone_number}</Button>
         </div>

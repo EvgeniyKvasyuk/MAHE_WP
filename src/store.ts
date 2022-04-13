@@ -5,12 +5,16 @@ import { messagesReducer } from './modules/Messages';
 import { flippersReducer } from './modules/flippers';
 import { articleReducer } from './pages/ArticlePage';
 
+export const reducers = {
+  article: articleReducer,
+  header: headerReducer,
+  messages: messagesReducer,
+  flippers: flippersReducer,
+};
+
 export const store = configureStore({
   reducer: {
-    article: articleReducer,
-    header: headerReducer,
-    messages: messagesReducer,
-    flippers: flippersReducer,
+    ...reducers,
   },
 });
 
