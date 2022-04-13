@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import classNames from 'classnames/bind';
 import { useNavigate } from 'react-router-dom';
@@ -10,6 +10,7 @@ import { List } from '@components/List';
 import { MenuItem } from '@components/Menu';
 import { SideMenu } from '@components/SideMenu';
 import { SvgIcon } from '@components/SvgIcon';
+import { Flipper } from '@modules/flippers';
 
 import { TAB_LIST } from '../../constants';
 import styles from './BurgerMenu.module.css';
@@ -72,17 +73,19 @@ export function BurgerMenu({ mainMenuToggleHandler, mainMenuOpen }: MainHeaderPr
     >
       {TAB_LIST.map((tab) => {
         return (
-          <Fragment key={tab.to || tab.label}>
-            <MenuItem
-              className={cn('burger-menu__item', 'burger-menu__item--bold')}
-              noHover
-              onClick={tab?.subMenuItems ? undefined : handleLinkClick(tab.to)}
-            >
-              {tab?.subMenuItems ? renderSubMenu(tab) : tab.label}
-            </MenuItem>
+          <Flipper flipper={tab.flipper} key={tab.to || tab.label}>
+            <>
+              <MenuItem
+                className={cn('burger-menu__item', 'burger-menu__item--bold')}
+                noHover
+                onClick={tab?.subMenuItems ? undefined : handleLinkClick(tab.to)}
+              >
+                {tab?.subMenuItems ? renderSubMenu(tab) : tab.label}
+              </MenuItem>
 
-            <Divider />
-          </Fragment>
+              <Divider />
+            </>
+          </Flipper>
         );
       })}
     </SideMenu>

@@ -6,6 +6,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { isTouchDevice } from '@common/utils';
 import { AppBar } from '@components/AppBar';
 import { Tab, Tabs } from '@components/Tabs';
+import { useFlippers } from '@modules/flippers';
 
 import styles from './HorizontalMenu.module.css';
 import { SubMenu } from './components';
@@ -23,8 +24,13 @@ export interface HorizontalMenuProps {
 export function HorizontalMenu({ menuItemList, className }: HorizontalMenuProps) {
   const location = useLocation();
   const navigate = useNavigate();
+  const getFlipperValue = useFlippers();
 
-  const [selectedTab, setSelectedTab] = useState(() => getInitialTabId(location.pathname, menuItemList));
+  const visibleMenuItems = useMemo(() => {
+    return menuItemList.filter((menuItem) => (menuItem.flipper ? !getFlipperValue(menuItem.flipper) : true));
+  }, [menuItemList, getFlipperValue]);
+
+  const [selectedTab, setSelectedTab] = useState(() => getInitialTabId(location.pathname, visibleMenuItems));
 
   const { closeMenu, handleTabMouseLeave, handleTouchStart, handleTabMouseOver, hoveredTabId, menuAnchorEl } =
     useOpenOnHover();
@@ -41,8 +47,8 @@ export function HorizontalMenu({ menuItemList, className }: HorizontalMenuProps)
 
   const handleTabChange = useCallback(
     (event, newId) => {
-      const tabIndex = getTabById(newId, menuItemList);
-      const tab = menuItemList[tabIndex];
+      const tabIndex = getTabById(newId, visibleMenuItems);
+      const tab = visibleMenuItems[tabIndex];
 
       if (tab.to) {
         selectTabAndNavigate(newId, tab.to);
@@ -51,18 +57,18 @@ export function HorizontalMenu({ menuItemList, className }: HorizontalMenuProps)
         }
       }
     },
-    [menuItemList, selectTabAndNavigate, closeMenu],
+    [visibleMenuItems, selectTabAndNavigate, closeMenu],
   );
 
   const menuItemsWithSubMenu = useMemo(
-    () => menuItemList.filter((menuItem) => menuItem.subMenuItems?.length),
-    [menuItemList],
+    () => visibleMenuItems.filter((menuItem) => menuItem.subMenuItems?.length),
+    [visibleMenuItems],
   );
 
   return (
     <AppBar className={cn('horizontal-menu', className)}>
       <Tabs onChange={handleTabChange} value={selectedTab}>
-        {menuItemList.map((tab) => (
+        {visibleMenuItems.map((tab) => (
           <Tab
             key={tab.id}
             value={tab.id}

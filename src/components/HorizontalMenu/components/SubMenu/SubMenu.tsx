@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import { useLocation } from 'react-router-dom';
 
 import { Menu, MenuItem } from '@components/Menu';
+import { Flipper } from '@modules/flippers';
 
 import { TabProps } from '../../horizontal-menu-types';
 import { getMenuId } from '../../utils';
@@ -46,33 +47,34 @@ export function SubMenu({
         (tab) =>
           tab.subMenuItems &&
           tab.subMenuItems.length > 0 && (
-            <Menu
-              key={tab.id}
-              id={getMenuId(tab.id)}
-              anchorEl={menuAnchorEl}
-              className={cn('sub-menu')}
-              open={hoveredTabId === tab.id}
-              onClose={closeMenu}
-              MenuListProps={{ onMouseLeave: closeMenu, className: cn('sub-menu__list') }}
-            >
-              {tab.subMenuItems.map((subMenuItem) => {
-                const path = `${tab.to}${subMenuItem.to}`;
-                const selected = isMenuItemSelected(path);
+            <Flipper flipper={tab.flipper} key={tab.id}>
+              <Menu
+                id={getMenuId(tab.id)}
+                anchorEl={menuAnchorEl}
+                className={cn('sub-menu')}
+                open={hoveredTabId === tab.id}
+                onClose={closeMenu}
+                MenuListProps={{ onMouseLeave: closeMenu, className: cn('sub-menu__list') }}
+              >
+                {tab.subMenuItems.map((subMenuItem) => {
+                  const path = `${tab.to}${subMenuItem.to}`;
+                  const selected = isMenuItemSelected(path);
 
-                return (
-                  <MenuItem
-                    className={cn('sub-menu__menu-item', {
-                      'sub-menu__menu-item--select': selected,
-                    })}
-                    selected={selected}
-                    onClick={handleMenuItemClick(tab.id, path)}
-                    key={subMenuItem.to}
-                  >
-                    {subMenuItem.label}
-                  </MenuItem>
-                );
-              })}
-            </Menu>
+                  return (
+                    <MenuItem
+                      className={cn('sub-menu__menu-item', {
+                        'sub-menu__menu-item--select': selected,
+                      })}
+                      selected={selected}
+                      onClick={handleMenuItemClick(tab.id, path)}
+                      key={subMenuItem.to}
+                    >
+                      {subMenuItem.label}
+                    </MenuItem>
+                  );
+                })}
+              </Menu>
+            </Flipper>
           ),
       )}
     </>
