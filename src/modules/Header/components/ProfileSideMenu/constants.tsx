@@ -3,6 +3,7 @@ import React from 'react';
 import { ROUTES } from '@common/routes';
 import { IconType } from '@components/SvgIcon';
 import { UnreadMessagesBadge } from '@modules/Messages';
+import { FlippersEnum } from '@modules/flippers';
 
 import { ViewSwitcher } from '../ViewSwitcher';
 import { locale } from './locale';
@@ -21,6 +22,7 @@ export const MENU_ITEMS = [
     icon: 'message' as IconType,
     to: ROUTES.MESSAGES,
     label: locale.links.messages,
+    flipper: FlippersEnum.HideSecureMessaging,
     badge: <UnreadMessagesBadge />,
   },
   {

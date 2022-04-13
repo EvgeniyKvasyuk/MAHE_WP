@@ -1,4 +1,4 @@
 export { flippersReducer } from './store';
 export { Flipper } from './Flipper';
-export { useLoadFlippers } from './hooks';
+export { useLoadFlippers, useFlippers } from './hooks';
 export { FlippersEnum } from './constants';
