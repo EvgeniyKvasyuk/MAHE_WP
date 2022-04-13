@@ -9,7 +9,7 @@ module.exports = {
     ['postcss-custom-properties', {
       preserve: false,
     }],
-    'postcss-color-mod-function',
+    'postcss-color-function',
     'postcss-flexbugs-fixes',
     ['postcss-preset-env', {
       autoprefixer: {

@@ -30,11 +30,11 @@
   &__column {
     flex: 1 1 auto;
 
-    &_left {
+    &-left {
       margin-right: 0.5rem;
     }
 
-    &_right {
+    &-right {
       margin-left: 0.5rem;
     }
 
