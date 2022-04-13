@@ -1,18 +1,15 @@
 import React from 'react';
 
 import classNames from 'classnames/bind';
-import { useDispatch, useSelector } from 'react-redux';
 
-import { StatusEnum } from '@common/constants';
-import { useIgnoreEffectDeps } from '@common/hooks';
 import { Divider } from '@components/Divider';
 import { Link } from '@components/Link';
 import { List, ListItem } from '@components/List';
-import { NumberCircle } from '@components/NumberCircle';
+import { SizesEnum } from '@components/NumberCircle';
 import { Paper } from '@components/Paper';
 import { SvgIcon, IconType } from '@components/SvgIcon';
 import { Typography } from '@components/Typography';
-import { getUnreadMessagesCount, unreadCountSelector } from '@modules/Messages';
+import { UnreadMessagesBadge } from '@modules/Messages';
 
 import styles from './WhatsNew.module.css';
 import { WHATS_NEW } from './constants';
@@ -25,13 +22,6 @@ type Props = {
 };
 
 export function WhatsNew({ className }: Props) {
-  const dispatch = useDispatch();
-  const { count, status } = useSelector(unreadCountSelector);
-
-  useIgnoreEffectDeps(() => {
-    if (status !== StatusEnum.Pending) dispatch(getUnreadMessagesCount());
-  });
-
   return (
     <Paper className={cn('whats-new', className)}>
       <Typography className={cn('whats-new__heading')} variant="h3">
@@ -47,7 +37,7 @@ export function WhatsNew({ className }: Props) {
                   {item.title}
                 </Link>
               </div>
-              {item?.showUnreadCount && count > 0 && <NumberCircle count={count} />}
+              {item?.showUnreadCount && <UnreadMessagesBadge size={SizesEnum.Small} />}
             </ListItem>
             <Divider />
           </React.Fragment>

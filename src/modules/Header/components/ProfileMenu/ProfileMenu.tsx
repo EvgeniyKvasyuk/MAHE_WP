@@ -11,6 +11,7 @@ export type MenuItemType = {
   label?: string;
   component?: ReactNode;
   noHover?: boolean;
+  badge?: ReactNode;
 };
 
 export interface ProfileMenuProps {
@@ -24,13 +25,15 @@ export function ProfileMenu({ menuItems }: ProfileMenuProps) {
     if (menuItem.to) {
       return (
         <Link to={menuItem.to} key={key}>
-          <ProfileMenuItem leftIcon={menuItem.icon}>{menuItem.label}</ProfileMenuItem>
+          <ProfileMenuItem leftIcon={menuItem.icon} badge={menuItem.badge}>
+            {menuItem.label}
+          </ProfileMenuItem>
         </Link>
       );
     }
 
     return (
-      <ProfileMenuItem leftIcon={menuItem.icon} noHover={menuItem.noHover} key={key}>
+      <ProfileMenuItem leftIcon={menuItem.icon} noHover={menuItem.noHover} badge={menuItem.badge} key={key}>
         {menuItem.component || menuItem.label}
       </ProfileMenuItem>
     );
