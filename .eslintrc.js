@@ -146,4 +146,12 @@ module.exports = {
       },
     },
   },
+  overrides: [
+    {
+      files: ["**/store.ts"],
+      rules: {
+        "no-param-reassign": ["off"],
+      }
+    }
+  ]
 };

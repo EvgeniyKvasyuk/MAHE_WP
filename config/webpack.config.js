@@ -276,6 +276,7 @@ module.exports = function (webpackEnv) {
         '@modules': path.resolve('src', 'modules'),
         '@common': path.resolve('src', 'common'),
         '@components': path.resolve('src', 'components'),
+        '@tests': path.resolve('src', 'tests'),
         // Allows for better profiling with ReactDevTools
         ...(isEnvProductionProfile && {
           'react-dom$': 'react-dom/profiling',
