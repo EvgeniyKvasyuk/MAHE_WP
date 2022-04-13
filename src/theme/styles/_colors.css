@@ -17,3 +17,8 @@ $color-text-button-warning: #ff4f23;
 $color-hover-background-button: #f7e8f7;
 $icon-color-primary: #6c737a;
 $color-sidebar-text-heading: #323639;
+
+/* progress colors */
+
+$color-progress: $color-background-button;
+$color-progress-secondary: #40bf99;

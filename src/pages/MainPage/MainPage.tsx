@@ -24,7 +24,7 @@ export function MainPage() {
       {isTabletMax && <WhatsNew className={cn('main-page__whats-new')} />}
       {isTabletMax && (
         <div className={cn('main-page__container')}>
-          <QuickLinks className={cn('main-page__quick-links', 'main-page__column', 'main-page__column_left')} />
+          <QuickLinks className={cn('main-page__quick-links', 'main-page__column', 'main-page__column-left')} />
         </div>
       )}
     </InnerLayout>

@@ -1,0 +1,57 @@
+@import '_colors.css';
+@import '_sizes.css';
+@import '_fonts.css';
+
+.progress {
+  font-family: $main-font-family;
+
+  &__root {
+    height: 0.675rem;
+    background-color: color(#963695 a(20%)); /* $color-progress (issues in postcss-color-function) */
+    border-radius: 0.5rem;
+
+    &--secondary {
+      background-color: color(#40bf99 a(20%)); /* $color-progress-secondary (issues in postcss-color-function) */
+    }
+  }
+
+  &__bar {
+    background-color: $color-progress;
+    border-radius: 0.5rem;
+
+    &--secondary {
+      background: $color-progress-secondary;
+    }
+  }
+
+  &__title {
+    margin-bottom: 0.25rem;
+    color: $color-text-secondary;
+    font-weight: 400;
+    font-size: 1.25rem;
+
+    @media (max-width: $screenMobileMax) {
+      font-size: 1.125rem;
+    }
+  }
+
+  &__labels {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__label {
+    flex: 0 1 auto;
+    margin-top: 0.25rem;
+    color: $icon-color-primary;
+    font-size: 1rem;
+
+    @media (max-width: $screenMobileMax) {
+      font-size: 0.75rem;
+    }
+
+    &--end {
+      margin-left: auto;
+    }
+  }
+}
