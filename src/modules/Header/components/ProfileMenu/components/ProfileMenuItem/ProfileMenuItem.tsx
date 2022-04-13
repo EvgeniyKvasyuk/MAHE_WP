@@ -15,10 +15,11 @@ export interface ProfileMenuItemProps {
   noHover?: boolean;
   halfPadding?: boolean;
   children: ReactNode;
+  badge?: ReactNode;
   leftIcon?: IconType;
 }
 
-export function ProfileMenuItem({ className, noHover, children, halfPadding, leftIcon }: ProfileMenuItemProps) {
+export function ProfileMenuItem({ className, noHover, children, halfPadding, leftIcon, badge }: ProfileMenuItemProps) {
   return (
     <>
       <MenuItem
@@ -29,6 +30,8 @@ export function ProfileMenuItem({ className, noHover, children, halfPadding, lef
         leftIcon={leftIcon}
       >
         {children}
+
+        {!!badge && <div className={cn('profile-menu-item__badge')}>{badge}</div>}
       </MenuItem>
       <Divider />
     </>

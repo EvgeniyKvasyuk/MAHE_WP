@@ -6,6 +6,7 @@ import { ROUTES } from '@common/routes';
 import { Button } from '@components/Button';
 import { Menu } from '@components/Menu';
 import { IconType } from '@components/SvgIcon';
+import { UnreadMessagesBadge } from '@modules/Messages';
 
 import { ProfileMenu } from '../ProfileMenu';
 import { ViewSwitcher } from '../ViewSwitcher';
@@ -32,6 +33,7 @@ const MENU_ITEMS = [
     icon: 'message' as IconType,
     to: ROUTES.MESSAGES,
     label: locale.links.messages,
+    badge: <UnreadMessagesBadge />,
   },
 ];
 
