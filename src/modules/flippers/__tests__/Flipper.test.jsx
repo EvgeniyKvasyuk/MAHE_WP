@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { render, screen } from '../../../tests/test-utils';
+import { render, screen } from '@tests/test-utils';
+
 import { Flipper } from '../Flipper';
 import { FlippersEnum } from '../constants';
 
