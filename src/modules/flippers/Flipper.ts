@@ -4,12 +4,16 @@ import { FlippersEnum } from './constants';
 import { useFlippers } from './hooks/useFlippers';
 
 type FlipperProps = {
-  flipper: FlippersEnum | Array<FlippersEnum>;
+  flipper?: FlippersEnum | Array<FlippersEnum>;
   children: ReactElement;
 };
 
 export function Flipper({ flipper, children }: FlipperProps) {
   const getFlipperValue = useFlippers();
+
+  if (!flipper) {
+    return children;
+  }
 
   const hide = Array.isArray(flipper) ? flipper.some((name) => getFlipperValue(name)) : getFlipperValue(flipper);
 

@@ -16,6 +16,10 @@
             "value": false
           },
           {
+            "key": "hide_appointment_buttons",
+            "value": false
+          },
+          {
             "key": "show_covid_scheduling_alert",
             "value": true
           }

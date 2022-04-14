@@ -1,5 +1,6 @@
 import { ROUTES } from '@common/routes';
 import { TabProps } from '@components/HorizontalMenu';
+import { FlippersEnum } from '@modules/flippers';
 
 import { locale } from './locale';
 
@@ -31,6 +32,7 @@ export const TAB_LIST = [
     id: 1,
     label: locale.links.appointments.root,
     to: ROUTES.APPOINTMENTS.ROOT,
+    flipper: FlippersEnum.HideAppointmentButtons,
     subMenuItems: APPOINTMENTS_SUB_MENU_ITEMS,
   },
   {

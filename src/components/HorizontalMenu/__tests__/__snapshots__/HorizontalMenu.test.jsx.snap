@@ -23,7 +23,7 @@ Object {
                 role="tablist"
               >
                 <button
-                  class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary tab horizontal-menu__tab tab--selected css-1h9z7r5-MuiButtonBase-root-MuiTab-root"
+                  class="MuiButtonBase-root MuiTab-root MuiTab-textColorInherit tab horizontal-menu__tab css-cjctlb-MuiButtonBase-root-MuiTab-root"
                   role="tab"
                   tabindex="-1"
                   type="button"
@@ -34,7 +34,7 @@ Object {
                   />
                 </button>
                 <button
-                  class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary tab horizontal-menu__tab css-1h9z7r5-MuiButtonBase-root-MuiTab-root"
+                  class="MuiButtonBase-root MuiTab-root MuiTab-textColorInherit tab horizontal-menu__tab css-cjctlb-MuiButtonBase-root-MuiTab-root"
                   role="tab"
                   tabindex="-1"
                   type="button"
@@ -45,7 +45,7 @@ Object {
                   />
                 </button>
                 <button
-                  class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary tab horizontal-menu__tab css-1h9z7r5-MuiButtonBase-root-MuiTab-root"
+                  class="MuiButtonBase-root MuiTab-root MuiTab-textColorInherit tab horizontal-menu__tab css-cjctlb-MuiButtonBase-root-MuiTab-root"
                   role="tab"
                   tabindex="-1"
                   type="button"
@@ -85,7 +85,7 @@ Object {
               role="tablist"
             >
               <button
-                class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary tab horizontal-menu__tab tab--selected css-1h9z7r5-MuiButtonBase-root-MuiTab-root"
+                class="MuiButtonBase-root MuiTab-root MuiTab-textColorInherit tab horizontal-menu__tab css-cjctlb-MuiButtonBase-root-MuiTab-root"
                 role="tab"
                 tabindex="-1"
                 type="button"
@@ -96,7 +96,7 @@ Object {
                 />
               </button>
               <button
-                class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary tab horizontal-menu__tab css-1h9z7r5-MuiButtonBase-root-MuiTab-root"
+                class="MuiButtonBase-root MuiTab-root MuiTab-textColorInherit tab horizontal-menu__tab css-cjctlb-MuiButtonBase-root-MuiTab-root"
                 role="tab"
                 tabindex="-1"
                 type="button"
@@ -107,7 +107,7 @@ Object {
                 />
               </button>
               <button
-                class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary tab horizontal-menu__tab css-1h9z7r5-MuiButtonBase-root-MuiTab-root"
+                class="MuiButtonBase-root MuiTab-root MuiTab-textColorInherit tab horizontal-menu__tab css-cjctlb-MuiButtonBase-root-MuiTab-root"
                 role="tab"
                 tabindex="-1"
                 type="button"
