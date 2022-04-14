@@ -1,6 +1,8 @@
 import { ReactComponent as AccountCircleIcon } from '@assets/account_circle.svg';
 import { ReactComponent as ArrowRightIcon } from '@assets/arrow_right.svg';
 import { ReactComponent as BurgerIcon } from '@assets/burger.svg';
+import { ReactComponent as CircleChevronLeftIcon } from '@assets/chevron_circle_left.svg';
+import { ReactComponent as CircleChevronRightIcon } from '@assets/chevron_circle_right.svg';
 import { ReactComponent as ChevronDownIcon } from '@assets/chevron_down.svg';
 import { ReactComponent as CloseIcon } from '@assets/close.svg';
 import { ReactComponent as MainLogoIcon } from '@assets/main_logo.svg';
@@ -32,6 +34,8 @@ export const ICONS = {
   signOut: SignOutIcon,
   trophy: TrophyIcon,
   union: UnionIcon,
+  circleChevronRight: CircleChevronRightIcon,
+  circleChevronLeft: CircleChevronLeftIcon,
 } as const;
 
 export type IconKey = keyof typeof ICONS;

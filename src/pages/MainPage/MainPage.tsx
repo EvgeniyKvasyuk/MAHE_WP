@@ -6,6 +6,7 @@ import classNames from 'classnames/bind';
 import { BREAK_POINTS } from '@common/constants/breackpoints';
 import { InnerLayout } from '@components/InnerLayout';
 import { MainPageActions } from '@modules/MainPageActions';
+import { News } from '@modules/News';
 import { QuickLinks } from '@modules/QuickLinks';
 import { SideBar } from '@modules/SideBar';
 import { WhatsNew } from '@modules/WhatsNew';
@@ -21,6 +22,7 @@ export function MainPage() {
   return (
     <InnerLayout className={cn('main-page')} rightSidebar={isLaptopMin ? <SideBar /> : null}>
       <MainPageActions className={cn('main-page__actions')} />
+      <News />
       {isTabletMax && <WhatsNew className={cn('main-page__whats-new')} />}
       {isTabletMax && (
         <div className={cn('main-page__container')}>

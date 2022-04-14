@@ -1,0 +1,16 @@
+@import '_colors';
+@import '_fonts';
+@import '_sizes.css';
+
+.news {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  margin: 0;
+  padding: 1.3rem;
+
+  @media (max-width: $screenTabletMax) {
+    margin-bottom: 10px;
+  }
+}
