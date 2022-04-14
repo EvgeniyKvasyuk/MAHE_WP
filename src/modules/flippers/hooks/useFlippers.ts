@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { FlippersEnum } from '../constants';
 import { flippersSelector } from '../store';
 
-type ResultType = (flipper: FlippersEnum) => boolean; // hideViaFlipper;
+type ResultType = (flipper: FlippersEnum) => boolean; // getFlipperValue;
 
 export const useFlippers = (): ResultType => {
   const flippers = useSelector(flippersSelector);
